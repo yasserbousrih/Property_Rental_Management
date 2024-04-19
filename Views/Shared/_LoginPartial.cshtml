@@ -1,0 +1,33 @@
+﻿@{
+    var userName = "";
+    if (Session["User"] != null)
+    {
+        userName = ((Property_Rental_Management.Models.User)Session["User"]).Name;
+    }
+}
+<ul class="navbar-nav navbar-right">
+
+    @if (Session["User"] == null)
+    {
+        // User is not logged in, show Login and Register buttons
+        <li>
+            @Html.ActionLink("Login", "Login", "Users", routeValues: null, htmlAttributes: new { @class = "nav-link" })
+        </li>
+        <li>
+            @Html.ActionLink("Sign Up", "Signup", "Users", routeValues: null, htmlAttributes: new { @class = "nav-link" })
+        </li>
+    }
+    else
+    {
+        // User is logged in, show user's name and Logout button
+        <li>
+            <span class="nav-link">Hello @userName!</span>
+        </li>
+        <li>
+            @using (Html.BeginForm("Logout", "Users", FormMethod.Post, new { id = "logoutForm", style = "display: inline;" }))
+            {
+                <button type="submit" class="nav-link btn btn-link">Log out</button>
+            }
+        </li>
+    }
+</ul>

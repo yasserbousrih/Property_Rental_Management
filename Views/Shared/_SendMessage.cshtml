@@ -1,0 +1,42 @@
+﻿@model Property_Rental_Management.Models.Message
+
+@using (Html.BeginForm("Create", "Messages", FormMethod.Post, new { id = "sendMessageForm" }))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-group">
+    @Html.LabelFor(model => model.RecipientID, "Recipient", htmlAttributes: new { @class = "control-label" })
+   @*// @Html.DropDownList("RecipientID", ViewBag.Users as IEnumerable<SelectListItem>, "Select a recipient", new { @class = "form-control" })*@
+    @Html.ValidationMessageFor(model => model.RecipientID, "", new { @class = "text-danger" })
+</div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Content, "Message", htmlAttributes: new { @class = "control-label" })
+        @Html.TextAreaFor(model => model.Content, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="button" id="sendMessageBtn" class="btn btn-primary">Send</button>
+}
+
+<script>
+    $(document).ready(function () {
+        $('#sendMessageBtn').click(function () {
+            $.ajax({
+                url: '@Url.Action("Create", "Messages")',
+                type: 'POST',
+                data: $('#sendMessageForm').serialize(),
+                success: function (response) {
+                    // Handle success
+                    // For example, show a success message or close the modal
+                    $('#myModal').modal('hide');
+                },
+                error: function (xhr, status, error) {
+                    // Handle error
+                    // For example, display error message
+                    console.error(xhr.responseText);
+                }
+            });
+        });
+    });
+</script>

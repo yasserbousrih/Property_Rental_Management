@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Property_Rental_Management.Models.Property>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List of the Properties</h2>
+
+<p>
+    @if (Session["User"] != null)
+    {
+        var user = (Property_Rental_Management.Models.User)Session["User"];
+        if (user.UserType == "a" || user.UserType == "m")
+        {
+            @Html.ActionLink("Create New", "Create")
+        }
+    }
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberOfRooms)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ManagerID)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberOfRooms)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ManagerID)
+            </td>
+            <td>
+                @if (Session["User"] != null)
+                {
+                    var user = (Property_Rental_Management.Models.User)Session["User"];
+                    if (user.UserType == "a" || user.UserType == "m")
+                    {
+                        @Html.ActionLink("Edit", "Edit", new { id = item.PropertyID })
+                        <text> | </text>
+                        @Html.ActionLink("Details", "Details", new { id = item.PropertyID })
+                        <text> | </text>
+                        @Html.ActionLink("Delete", "Delete", new { id = item.PropertyID })
+                    }
+                }
+            </td>
+
+        </tr>
+    }
+
+
+</table>

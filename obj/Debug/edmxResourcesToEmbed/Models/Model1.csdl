@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PropertyRentalManagementWebSiteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Appointment">
+    <Key>
+      <PropertyRef Name="AppointmentID" />
+    </Key>
+    <Property Name="AppointmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateAndTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Appointments_Users" FromRole="Appointments" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Message">
+    <Key>
+      <PropertyRef Name="MessageID" />
+    </Key>
+    <Property Name="MessageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SenderID" Type="Int32" Nullable="false" />
+    <Property Name="RecipientID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Messages_Users_Recipient" FromRole="Messages" ToRole="Users" />
+    <NavigationProperty Name="User1" Relationship="Self.FK_Messages_Users_Sender" FromRole="Messages" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Property">
+    <Key>
+      <PropertyRef Name="PropertyID" />
+    </Key>
+    <Property Name="PropertyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ManagerID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Properties_Users" FromRole="Properties" ToRole="Users" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Apartments" Relationship="PropertyRentalManagementWebSiteModel.FK_Apartment_Property" FromRole="Property" ToRole="Apartment" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Appointments" Relationship="Self.FK_Appointments_Users" FromRole="Users" ToRole="Appointments" />
+    <NavigationProperty Name="Messages" Relationship="Self.FK_Messages_Users_Recipient" FromRole="Users" ToRole="Messages" />
+    <NavigationProperty Name="Messages1" Relationship="Self.FK_Messages_Users_Sender" FromRole="Users" ToRole="Messages" />
+    <NavigationProperty Name="Properties" Relationship="Self.FK_Properties_Users" FromRole="Users" ToRole="Properties" />
+  </EntityType>
+  <Association Name="FK_Appointments_Users">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Appointments" Type="Self.Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Appointments">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Messages_Users_Recipient">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Messages" Type="Self.Message" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Messages">
+        <PropertyRef Name="RecipientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Messages_Users_Sender">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Messages" Type="Self.Message" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Messages">
+        <PropertyRef Name="SenderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Properties_Users">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Properties" Type="Self.Property" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Properties">
+        <PropertyRef Name="ManagerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PropertyRentalManagementWebSiteEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Appointments" EntityType="Self.Appointment" />
+    <EntitySet Name="Messages" EntityType="Self.Message" />
+    <EntitySet Name="Properties" EntityType="Self.Property" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK_Appointments_Users" Association="Self.FK_Appointments_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Appointments" EntitySet="Appointments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Messages_Users_Recipient" Association="Self.FK_Messages_Users_Recipient">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Messages" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Messages_Users_Sender" Association="Self.FK_Messages_Users_Sender">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Messages" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Properties_Users" Association="Self.FK_Properties_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Properties" EntitySet="Properties" />
+    </AssociationSet>
+    <EntitySet Name="Apartments" EntityType="PropertyRentalManagementWebSiteModel.Apartment" />
+    <EntitySet Name="sysdiagrams" EntityType="PropertyRentalManagementWebSiteModel.sysdiagram" />
+    <AssociationSet Name="FK_Apartment_Property" Association="PropertyRentalManagementWebSiteModel.FK_Apartment_Property">
+      <End Role="Property" EntitySet="Properties" />
+      <End Role="Apartment" EntitySet="Apartments" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Apartment">
+    <Key>
+      <PropertyRef Name="ApartmentID" />
+    </Key>
+    <Property Name="ApartmentID" Type="Int32" Nullable="false" />
+    <Property Name="NumberOfRooms" Type="Int32" />
+    <Property Name="Rent" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="PropertyID" Type="Int32" />
+    <NavigationProperty Name="Property" Relationship="PropertyRentalManagementWebSiteModel.FK_Apartment_Property" FromRole="Apartment" ToRole="Property" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Apartment_Property">
+    <End Type="PropertyRentalManagementWebSiteModel.Property" Role="Property" Multiplicity="0..1" />
+    <End Type="PropertyRentalManagementWebSiteModel.Apartment" Role="Apartment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="PropertyID" />
+      </Principal>
+      <Dependent Role="Apartment">
+        <PropertyRef Name="PropertyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

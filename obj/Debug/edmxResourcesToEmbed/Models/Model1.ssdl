@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PropertyRentalManagementWebSiteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Apartments">
+    <Key>
+      <PropertyRef Name="ApartmentID" />
+    </Key>
+    <Property Name="ApartmentID" Type="int" Nullable="false" />
+    <Property Name="NumberOfRooms" Type="int" />
+    <Property Name="Rent" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Status" Type="varchar" MaxLength="255" />
+    <Property Name="PropertyID" Type="int" />
+  </EntityType>
+  <EntityType Name="Appointments">
+    <Key>
+      <PropertyRef Name="AppointmentID" />
+    </Key>
+    <Property Name="AppointmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateAndTime" Type="datetime" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Messages">
+    <Key>
+      <PropertyRef Name="MessageID" />
+    </Key>
+    <Property Name="MessageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SenderID" Type="int" Nullable="false" />
+    <Property Name="RecipientID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Properties">
+    <Key>
+      <PropertyRef Name="PropertyID" />
+    </Key>
+    <Property Name="PropertyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ManagerID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="UserType" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Apartment_Property">
+    <End Role="Properties" Type="Self.Properties" Multiplicity="0..1" />
+    <End Role="Apartments" Type="Self.Apartments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Properties">
+        <PropertyRef Name="PropertyID" />
+      </Principal>
+      <Dependent Role="Apartments">
+        <PropertyRef Name="PropertyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Appointments_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Appointments" Type="Self.Appointments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Appointments">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Messages_Users_Recipient">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Messages" Type="Self.Messages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Messages">
+        <PropertyRef Name="RecipientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Messages_Users_Sender">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Messages" Type="Self.Messages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Messages">
+        <PropertyRef Name="SenderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Properties_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Properties" Type="Self.Properties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Properties">
+        <PropertyRef Name="ManagerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PropertyRentalManagementWebSiteModelStoreContainer">
+    <EntitySet Name="Apartments" EntityType="Self.Apartments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Appointments" EntityType="Self.Appointments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Messages" EntityType="Self.Messages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Properties" EntityType="Self.Properties" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Apartment_Property" Association="Self.FK_Apartment_Property">
+      <End Role="Properties" EntitySet="Properties" />
+      <End Role="Apartments" EntitySet="Apartments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Appointments_Users" Association="Self.FK_Appointments_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Appointments" EntitySet="Appointments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Messages_Users_Recipient" Association="Self.FK_Messages_Users_Recipient">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Messages" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Messages_Users_Sender" Association="Self.FK_Messages_Users_Sender">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Messages" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Properties_Users" Association="Self.FK_Properties_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Properties" EntitySet="Properties" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
