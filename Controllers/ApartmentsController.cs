@@ -16,6 +16,33 @@ namespace Property_Rental_Management.Controllers
     {
         private Property_Rental_ManagementContext db = new Property_Rental_ManagementContext();
 
+        // GET: Apartments/By the propety ID
+        public async Task<ActionResult> ListApartments(int? propertyId)
+        {
+            if (propertyId == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            var apartments = await db.Apartments
+                                .Where(a => a.PropertyID == propertyId)
+                                .Include(a => a.Property)
+                                .ToListAsync();
+
+            if (apartments == null || apartments.Count == 0)
+            {
+                return HttpNotFound();
+            }
+
+            return View("Index", apartments);
+        }
+
+
+
+
+
+
+
         // GET: Apartments
         public async Task<ActionResult> Index()
         {

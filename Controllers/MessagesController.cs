@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Property_Rental_Management.Data;
@@ -14,6 +15,29 @@ namespace Property_Rental_Management.Controllers
     public class MessagesController : Controller
     {
         private Property_Rental_ManagementContext db = new Property_Rental_ManagementContext();
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task SendMessage([Bind(Include = "Content,RecipientID")] Message message)
+        {
+            if (ModelState.IsValid)
+            {
+                // Set the SenderID to the current user's ID
+                var user = (User)Session["User"];
+                if (user != null)
+                {
+                    message.SenderID = user.UserID;
+                }
+
+                db.Messages.Add(message);
+                await db.SaveChangesAsync();
+
+                // Set a message to be displayed
+                TempData["Message"] = "Message sent successfully!";
+                // No return statement
+            }
+        }
+
 
 
 

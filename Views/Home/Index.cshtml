@@ -3,11 +3,21 @@
 }
 
 <main>
+
     <section class="row" aria-labelledby="aspnetTitle">
         <h1 id="title">ASP.NET</h1>
         <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
         <p><a href="https://asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
     </section>
+    @if (Session["User"] != null)
+    {
+        <section class="row">
+            <div class="col-md-12">
+                @Html.Partial("_SendMessage")
+            </div>
+        </section>
+    }
+
 
     <div class="row">
         <section class="col-md-4" aria-labelledby="gettingStartedTitle">
@@ -31,11 +41,7 @@
         </section>
     </div>
 
-    <section class="row">
-        <div class="col-md-12">
-            @Html.Partial("_SendMessage")
-        </div>
-    </section>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </main>

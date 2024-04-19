@@ -8,7 +8,14 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @if (Session["User"] != null)
+    {
+        var user = (Property_Rental_Management.Models.User)Session["User"];
+        if (user.UserType == "a" || user.UserType == "m")
+        {
+            @Html.ActionLink("Create New", "Create")
+        }
+    }
 </p>
 <table class="table">
     <tr>
@@ -42,9 +49,20 @@
             @Html.DisplayFor(modelItem => item.Status)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ApartmentID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ApartmentID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ApartmentID })
+            @if (Session["User"] != null)
+            {
+                var user = (Property_Rental_Management.Models.User)Session["User"];
+                if (user.UserType == "a" || user.UserType == "m")
+                {
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ApartmentID })
+                    <text> | </text>
+                    @Html.ActionLink("Details", "Details", new { id = item.ApartmentID })
+                    <text> | </text>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ApartmentID })
+                    <text> | </text>
+                }
+
+            }
         </td>
     </tr>
 }

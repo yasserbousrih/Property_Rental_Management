@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Controllers"
   ],
-  "SelectedNode": "\\Property_Rental_Management.sln",
+  "SelectedNode": "\\Controllers\\MessagesController.cs",
   "PreviewInSolutionExplorer": false
 }

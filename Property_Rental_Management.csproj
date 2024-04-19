@@ -139,6 +139,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202404180201409_InitialCreate.cs" />
+    <Compile Include="Migrations\202404180201409_InitialCreate.Designer.cs">
+      <DependentUpon>202404180201409_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404191034584_UpdatePropertyModel.cs" />
+    <Compile Include="Migrations\202404191034584_UpdatePropertyModel.Designer.cs">
+      <DependentUpon>202404191034584_UpdatePropertyModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Apartment.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -305,6 +314,14 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202404180201409_InitialCreate.resx">
+      <DependentUpon>202404180201409_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404191034584_UpdatePropertyModel.resx">
+      <DependentUpon>202404191034584_UpdatePropertyModel.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

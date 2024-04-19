@@ -21,14 +21,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.NumberOfRooms)
+            @Html.DisplayNameFor(model => model.Name)
+           
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Rent)
+            @Html.DisplayNameFor(model => model.Address)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Status)
-        </th>
+
         <th>
             @Html.DisplayNameFor(model => model.ManagerID)
         </th>
@@ -39,14 +38,12 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.NumberOfRooms)
+                @Html.DisplayFor(modelItem => item.Address)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Rent)
+                @Html.DisplayFor(modelItem => item.Name)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
+
             <td>
                 @Html.DisplayFor(modelItem => item.ManagerID)
             </td>
@@ -61,8 +58,12 @@
                         @Html.ActionLink("Details", "Details", new { id = item.PropertyID })
                         <text> | </text>
                         @Html.ActionLink("Delete", "Delete", new { id = item.PropertyID })
+                        <text> | </text>
                     }
+
                 }
+
+                @Html.ActionLink("View Apartments", "ListApartments", "Apartments", new { propertyId = item.PropertyID }, null)
             </td>
 
         </tr>
