@@ -17,6 +17,14 @@
         }
     }
 </p>
+@using (Html.BeginForm("Index", "Apartments", FormMethod.Get))
+{
+    <p>
+        Search: <input type="text" name="searchString" value="@ViewBag.SearchString" />
+        <input type="submit" value="Search" />
+    </p>
+}
+
 <table class="table">
     <tr>
         <th>
@@ -34,37 +42,39 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Property.Address)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NumberOfRooms)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Rent)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Status)
-        </td>
-        <td>
-            @if (Session["User"] != null)
-            {
-                var user = (Property_Rental_Management.Models.User)Session["User"];
-                if (user.UserType == "a" || user.UserType == "m")
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Property.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberOfRooms)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @if (Session["User"] != null)
                 {
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ApartmentID })
-                    <text> | </text>
-                    @Html.ActionLink("Details", "Details", new { id = item.ApartmentID })
-                    <text> | </text>
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ApartmentID })
-                    <text> | </text>
-                }
+                    var user = (Property_Rental_Management.Models.User)Session["User"];
+                    if (user.UserType == "a" || user.UserType == "m")
+                    {
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ApartmentID })
+                        <text> | </text>
+                        @Html.ActionLink("Details", "Details", new { id = item.ApartmentID })
+                        <text> | </text>
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ApartmentID })
+                        <text> | </text>
+                    }
 
-            }
-        </td>
-    </tr>
-}
+                }
+            </td>
+        </tr>
+    }
+
 
 </table>

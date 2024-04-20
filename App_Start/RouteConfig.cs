@@ -18,22 +18,6 @@ namespace Property_Rental_Management
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
-
-            routes.MapRoute(
-                name: "Properties",
-                url: "Properties/Index",
-                defaults: new { controller = "Properties", action = "Index" }
-             );
-            routes.MapRoute(
-                name: "SendMessage",
-                url: "Messages/SendMessage",
-                defaults: new { controller = "Messages", action = "SendMessage" }
-             );
-
-
-
-
-
         }
     }
 }

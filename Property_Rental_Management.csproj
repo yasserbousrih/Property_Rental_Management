@@ -147,6 +147,10 @@
     <Compile Include="Migrations\202404191034584_UpdatePropertyModel.Designer.cs">
       <DependentUpon>202404191034584_UpdatePropertyModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202404200330243_YourMigrationName.cs" />
+    <Compile Include="Migrations\202404200330243_YourMigrationName.Designer.cs">
+      <DependentUpon>202404200330243_YourMigrationName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Apartment.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -251,11 +255,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Properties\Create.cshtml" />
-    <Content Include="Views\Properties\Delete.cshtml" />
-    <Content Include="Views\Properties\Details.cshtml" />
-    <Content Include="Views\Properties\Edit.cshtml" />
-    <Content Include="Views\Properties\Index.cshtml" />
     <Content Include="Views\Users\Create.cshtml" />
     <Content Include="Views\Users\Delete.cshtml" />
     <Content Include="Views\Users\Details.cshtml" />
@@ -274,13 +273,17 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Users\Login.cshtml" />
     <Content Include="Views\Users\SignUp.cshtml" />
-    <Content Include="Views\Shared\_SendMessage.cshtml" />
-    <Content Include="Views\Shared\SendMessage.cshtml" />
     <Content Include="Views\Apartments\Create.cshtml" />
     <Content Include="Views\Apartments\Delete.cshtml" />
     <Content Include="Views\Apartments\Details.cshtml" />
     <Content Include="Views\Apartments\Edit.cshtml" />
     <Content Include="Views\Apartments\Index.cshtml" />
+    <Content Include="Views\Messages\SendMessages.cshtml" />
+    <Content Include="Views\Properties\Create.cshtml" />
+    <Content Include="Views\Properties\Delete.cshtml" />
+    <Content Include="Views\Properties\Details.cshtml" />
+    <Content Include="Views\Properties\Edit.cshtml" />
+    <Content Include="Views\Properties\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -321,6 +324,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202404191034584_UpdatePropertyModel.resx">
       <DependentUpon>202404191034584_UpdatePropertyModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404200330243_YourMigrationName.resx">
+      <DependentUpon>202404200330243_YourMigrationName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

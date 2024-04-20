@@ -18,7 +18,7 @@ namespace Property_Rental_Management.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task SendMessage([Bind(Include = "Content,RecipientID")] Message message)
+        public async Task<ActionResult> SendMessage([Bind(Include = "Content,RecipientID")] Message message)
         {
             if (ModelState.IsValid)
             {
@@ -32,10 +32,11 @@ namespace Property_Rental_Management.Controllers
                 db.Messages.Add(message);
                 await db.SaveChangesAsync();
 
-                // Set a message to be displayed
-                TempData["Message"] = "Message sent successfully!";
-                // No return statement
+                return RedirectToAction("SendMessage");
             }
+
+            // If the model is not valid, return to the same view with validation errors
+            return View(message);
         }
 
 
@@ -70,16 +71,6 @@ namespace Property_Rental_Management.Controllers
 
 
 
-        public ActionResult SendMessage()
-        {
-            // Get users from the database
-            var users = db.Users.ToList();
-            // Create a SelectList for dropdown
-            ViewBag.Users = new SelectList(users, "UserID", "Username");
-            // Create a new message model
-            var message = new Message();
-            return PartialView("_SendMessage", message);
-        }
 
 
 

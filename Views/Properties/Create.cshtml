@@ -3,7 +3,6 @@
 @{
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
-
     // Retrieve user information from session
     var user = (Property_Rental_Management.Models.User)Session["User"];
     // Check if the user is a manager or an administrator
@@ -70,10 +69,7 @@
     </div>
 }
 
+
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}

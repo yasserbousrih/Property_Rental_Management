@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
@@ -15,20 +16,21 @@ namespace Property_Rental_Management.Controllers
     {
         private Property_Rental_ManagementContext db = new Property_Rental_ManagementContext();
 
-
-
-
-
-
-
-
-
-
-
         // GET: Properties
-        public ActionResult Index()
+        // GET: Properties
+        public ActionResult Index(string searchString)
         {
-            return View(db.Properties.ToList());
+            var properties = db.Properties.ToList();
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                properties = properties.Where(p =>
+                    p.Address.Contains(searchString) ||
+                    p.Name.Contains(searchString)
+                ).ToList();
+            }
+
+            return View(properties);
         }
 
         // GET: Properties/Details/5
@@ -53,47 +55,19 @@ namespace Property_Rental_Management.Controllers
         }
 
         // POST: Properties/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PropertyID,NumberOfRooms,Rent,Status,ManagerID")] Property property)
+        public ActionResult Create([Bind(Include = "PropertyID,ManagerID,Address,Name")] Property property)
         {
-            // Check if the user is a manager
-            if (UserIsManager())
-            {
-                // Get the manager's UserID and set it as the ManagerID of the property
-                var managerId = GetManagerId();
-                property.ManagerID = managerId;
-            }
-
             if (ModelState.IsValid)
             {
-                // Save the property
                 db.Properties.Add(property);
                 db.SaveChanges();
-                return RedirectToAction("Index", "Properties"); // Redirect to the Index action of the Properties controller
+                return RedirectToAction("Index");
             }
 
-
-            // If the model state is not valid, return the view with validation errors
             return View(property);
         }
-        // Helper method to check if the user is a manager
-        private bool UserIsManager()
-        {
-            var user = (Property_Rental_Management.Models.User)Session["User"];
-            return user != null && user.UserType == "m";
-        }
-
-        // Helper method to get the manager's UserID
-        private int GetManagerId()
-        {
-            var user = (Property_Rental_Management.Models.User)Session["User"];
-            return user != null ? user.UserID : 0;
-        }
-
-
 
         // GET: Properties/Edit/5
         public ActionResult Edit(int? id)
@@ -111,11 +85,9 @@ namespace Property_Rental_Management.Controllers
         }
 
         // POST: Properties/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PropertyID,NumberOfRooms,Rent,Status,ManagerID")] Property property)
+        public ActionResult Edit([Bind(Include = "PropertyID,ManagerID,Address,Name")] Property property)
         {
             if (ModelState.IsValid)
             {

@@ -160,10 +160,11 @@ D:\Personal Projects\Property_Rental_Management\bin\Newtonsoft.Json.xml
 D:\Personal Projects\Property_Rental_Management\bin\Antlr3.Runtime.pdb
 D:\Personal Projects\Property_Rental_Management\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\Personal Projects\Property_Rental_Management\obj\Debug\Property_Rental_Management.csproj.AssemblyReference.cache
+D:\Personal Projects\Property_Rental_Management\obj\Debug\Property_Rental_Management.Migrations.InitialCreate.resources
+D:\Personal Projects\Property_Rental_Management\obj\Debug\Property_Rental_Management.Migrations.UpdatePropertyModel.resources
+D:\Personal Projects\Property_Rental_Management\obj\Debug\Property_Rental_Management.Migrations.YourMigrationName.resources
+D:\Personal Projects\Property_Rental_Management\obj\Debug\Property_Rental_Management.csproj.GenerateResource.cache
 D:\Personal Projects\Property_Rental_Management\obj\Debug\Property_Rental_Management.csproj.CoreCompileInputs.cache
 D:\Personal Projects\Property_Rental_Management\obj\Debug\Property.82F6357B.Up2Date
 D:\Personal Projects\Property_Rental_Management\obj\Debug\Property_Rental_Management.dll
 D:\Personal Projects\Property_Rental_Management\obj\Debug\Property_Rental_Management.pdb
-D:\Personal Projects\Property_Rental_Management\obj\Debug\Property_Rental_Management.Migrations.InitialCreate.resources
-D:\Personal Projects\Property_Rental_Management\obj\Debug\Property_Rental_Management.csproj.GenerateResource.cache
-D:\Personal Projects\Property_Rental_Management\obj\Debug\Property_Rental_Management.Migrations.UpdatePropertyModel.resources

@@ -9,6 +9,8 @@ using System.Web;
 using System.Web.Mvc;
 using Property_Rental_Management.Data;
 using Property_Rental_Management.Models;
+//using Microsoft.AspNetCore.Mvc;
+
 
 namespace Property_Rental_Management.Controllers
 {
@@ -37,6 +39,18 @@ namespace Property_Rental_Management.Controllers
             return View("Index", apartments);
         }
 
+        //public async Task<IActionResult> Index(string searchString)
+        //{
+        //    var apartments = from a in _context.Apartments
+        //                     select a;
+
+        //    if (!string.IsNullOrEmpty(searchString))
+        //    {
+        //        apartments = apartments.Where(a => a.Property.Address.Contains(searchString));
+        //    }
+
+        //    return View(await apartments.ToListAsync());
+        //}
 
 
 
@@ -44,11 +58,49 @@ namespace Property_Rental_Management.Controllers
 
 
         // GET: Apartments
-        public async Task<ActionResult> Index()
+        public ActionResult Index(string searchString, int? minRooms, int? maxRooms, decimal? minRent, decimal? maxRent, string status)
         {
             var apartments = db.Apartments.Include(a => a.Property);
-            return View(await apartments.ToListAsync());
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                apartments = apartments.Where(a =>
+                    a.Property.Address.Contains(searchString) ||
+                    a.NumberOfRooms.ToString().Contains(searchString) ||
+                    a.Rent.ToString().Contains(searchString) ||
+                    a.Status.Contains(searchString)
+                );
+            }
+
+            if (minRooms.HasValue)
+            {
+                apartments = apartments.Where(a => a.NumberOfRooms >= minRooms);
+            }
+
+            if (maxRooms.HasValue)
+            {
+                apartments = apartments.Where(a => a.NumberOfRooms <= maxRooms);
+            }
+
+            if (minRent.HasValue)
+            {
+                apartments = apartments.Where(a => a.Rent >= minRent);
+            }
+
+            if (maxRent.HasValue)
+            {
+                apartments = apartments.Where(a => a.Rent <= maxRent);
+            }
+
+            if (!String.IsNullOrEmpty(status))
+            {
+                apartments = apartments.Where(a => a.Status == status);
+            }
+
+            return View(apartments.ToList());
         }
+
+
 
         // GET: Apartments/Details/5
         public async Task<ActionResult> Details(int? id)
