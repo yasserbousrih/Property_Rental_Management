@@ -1,19 +1,21 @@
-﻿@model Property_Rental_Management.Models.Message
-
+﻿
+@model Property_Rental_Management.Models.Message
 @{
-    ViewBag.Title = "Send Message";
+    ViewBag.Title = "Sendmessages";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
 <h2>Send Message</h2>
 
-@using (Html.BeginForm("SendMessage", "Home", FormMethod.Post, new { id = "sendMessageForm" }))
+@using (Html.BeginForm("SendMessages", "Messages", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
         <h4>Message</h4>
         <hr />
+
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
         <div class="form-group">
@@ -23,23 +25,18 @@
                 @Html.ValidationMessageFor(model => model.RecipientID, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
             @Html.LabelFor(model => model.Content, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextAreaFor(model => model.Content, new { @class = "form-control" })
+                @Html.EditorFor(model => model.Content, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <button type="submit" class="btn btn-default">Send</button>
+                <input type="submit" value="Send" class="btn btn-default" />
             </div>
         </div>
     </div>
-}
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
 }

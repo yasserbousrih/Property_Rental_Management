@@ -9,7 +9,6 @@ using System.Web;
 using System.Web.Mvc;
 using Property_Rental_Management.Data;
 using Property_Rental_Management.Models;
-//using Microsoft.AspNetCore.Mvc;
 
 
 namespace Property_Rental_Management.Controllers
@@ -18,88 +17,48 @@ namespace Property_Rental_Management.Controllers
     {
         private Property_Rental_ManagementContext db = new Property_Rental_ManagementContext();
 
-        // GET: Apartments/By the propety ID
-        public async Task<ActionResult> ListApartments(int? propertyId)
-        {
-            if (propertyId == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-
-            var apartments = await db.Apartments
-                                .Where(a => a.PropertyID == propertyId)
-                                .Include(a => a.Property)
-                                .ToListAsync();
-
-            if (apartments == null || apartments.Count == 0)
-            {
-                return HttpNotFound();
-            }
-
-            return View("Index", apartments);
-        }
-
-        //public async Task<IActionResult> Index(string searchString)
-        //{
-        //    var apartments = from a in _context.Apartments
-        //                     select a;
-
-        //    if (!string.IsNullOrEmpty(searchString))
-        //    {
-        //        apartments = apartments.Where(a => a.Property.Address.Contains(searchString));
-        //    }
-
-        //    return View(await apartments.ToListAsync());
-        //}
-
-
-
-
-
-
         // GET: Apartments
-        public ActionResult Index(string searchString, int? minRooms, int? maxRooms, decimal? minRent, decimal? maxRent, string status)
+        public async Task<ActionResult> Index(int? propertyId, string searchString)
         {
-            var apartments = db.Apartments.Include(a => a.Property);
+            var apartments = db.Apartments.AsQueryable();
+
+            if (propertyId.HasValue)
+            {
+                apartments = apartments.Where(a => a.PropertyID == propertyId);
+            }
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                apartments = apartments.Where(a =>
-                    a.Property.Address.Contains(searchString) ||
-                    a.NumberOfRooms.ToString().Contains(searchString) ||
-                    a.Rent.ToString().Contains(searchString) ||
-                    a.Status.Contains(searchString)
-                );
+                apartments = apartments.Where(a => a.NumberOfRooms.ToString().Contains(searchString)
+                                                   || a.Rent.ToString().Contains(searchString)
+                                                   || a.Status.Contains(searchString));
             }
 
-            if (minRooms.HasValue)
-            {
-                apartments = apartments.Where(a => a.NumberOfRooms >= minRooms);
-            }
-
-            if (maxRooms.HasValue)
-            {
-                apartments = apartments.Where(a => a.NumberOfRooms <= maxRooms);
-            }
-
-            if (minRent.HasValue)
-            {
-                apartments = apartments.Where(a => a.Rent >= minRent);
-            }
-
-            if (maxRent.HasValue)
-            {
-                apartments = apartments.Where(a => a.Rent <= maxRent);
-            }
-
-            if (!String.IsNullOrEmpty(status))
-            {
-                apartments = apartments.Where(a => a.Status == status);
-            }
-
-            return View(apartments.ToList());
+            return View(await apartments.ToListAsync());
         }
 
+
+
+        //// GET: Apartments/By the propety ID
+        //public async Task<ActionResult> ListApartments(int? propertyId)
+        //{
+        //    if (propertyId == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+
+        //    var apartments = await db.Apartments
+        //                        .Where(a => a.PropertyID == propertyId)
+        //                        .Include(a => a.Property)
+        //                        .ToListAsync();
+
+        //    if (apartments == null || apartments.Count == 0)
+        //    {
+        //        return HttpNotFound();
+        //    }
+
+        //    return View("Index", apartments);
+        //}
 
 
         // GET: Apartments/Details/5

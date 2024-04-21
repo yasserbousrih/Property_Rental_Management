@@ -4,11 +4,14 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Property_Rental_Management.Data;
 using Property_Rental_Management.Models;
+
+
 
 namespace Property_Rental_Management.Controllers
 {
@@ -16,28 +19,80 @@ namespace Property_Rental_Management.Controllers
     {
         private Property_Rental_ManagementContext db = new Property_Rental_ManagementContext();
 
+
+
+        // GET: SendMessages
+        public ActionResult SendMessages()
+        {
+            if (Session["User"] == null)
+            {
+                return RedirectToAction("Login", "Users"); // Redirect to login if user is not signed in
+            }
+
+            return View();
+        }
+
+        // POST: SendMessages
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> SendMessage([Bind(Include = "Content,RecipientID")] Message message)
+        public async Task<ActionResult> SendMessages([Bind(Include = "Content,RecipientID")] Message message)
         {
+            if (Session["User"] == null)
+            {
+                return RedirectToAction("Login", "Users"); // Redirect to login if user is not signed in
+            }
+
             if (ModelState.IsValid)
             {
                 // Set the SenderID to the current user's ID
                 var user = (User)Session["User"];
-                if (user != null)
-                {
-                    message.SenderID = user.UserID;
-                }
+                message.SenderID = user.UserID;
 
                 db.Messages.Add(message);
-                await db.SaveChangesAsync();
+                try
+                {
+                    await db.SaveChangesAsync();
+                }
+                catch (Exception ex)
+                {
+                    // Log the error (uncomment ex variable name and write a log.)
+                    ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
+                }
 
-                return RedirectToAction("SendMessage");
+                // Redirect to the ShowMessages action in the Messages controller
+                return RedirectToAction("ShowMessages", "Messages");
             }
 
             // If the model is not valid, return to the same view with validation errors
             return View(message);
         }
+
+
+
+        public ActionResult ShowMessages()
+        {
+            if (Session["User"] == null)
+            {
+                return RedirectToAction("Login", "Users"); // Redirect to login if user is not signed in
+            }
+
+            // Get the signed-in user's ID
+            var user = (User)Session["User"];
+
+            // Retrieve messages where the recipient's ID matches the signed-in user's ID
+            var messages = db.Messages.Where(m => m.RecipientID == user.UserID).ToList();
+
+            return View(messages);
+        }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -96,7 +151,7 @@ namespace Property_Rental_Management.Controllers
             return View(message);
         }
 
-        // GET: Messages/Create
+        //GET: Messages/Create
         //public ActionResult Create()
         //{
         //    return View();

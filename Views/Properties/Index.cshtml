@@ -17,23 +17,24 @@
         }
     }
 </p>
-@using (Html.BeginForm("Index", "Properties", FormMethod.Get))
-{
-    <p>
-        Search: <input type="text" name="searchString" value="@ViewBag.SearchString" />
+<p>
+    @using (Html.BeginForm("Index", "Properties", FormMethod.Get))
+    {
+        <input type="text" name="address" placeholder="Search by address" />
         <input type="submit" value="Search" />
-    </p>
-}
+    }
+</p>
+
 
 
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.Address)
 
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Address)
+            @Html.DisplayNameFor(model => model.Name)
         </th>
 
         <th>
@@ -70,8 +71,8 @@
                     }
 
                 }
+                @Html.ActionLink("View Apartments", "Index", "Apartments", new { propertyId = item.PropertyID }, null)
 
-                @Html.ActionLink("View Apartments", "ListApartments", "Apartments", new { propertyId = item.PropertyID }, null)
             </td>
 
         </tr>

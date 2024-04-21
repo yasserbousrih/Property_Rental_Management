@@ -16,22 +16,23 @@ namespace Property_Rental_Management.Controllers
     {
         private Property_Rental_ManagementContext db = new Property_Rental_ManagementContext();
 
-        // GET: Properties
-        // GET: Properties
-        public ActionResult Index(string searchString)
-        {
-            var properties = db.Properties.ToList();
 
-            if (!String.IsNullOrEmpty(searchString))
+        // GET: Properties
+        public ActionResult Index(string address)
+        {
+            var properties = db.Properties.AsQueryable();
+
+            if (!string.IsNullOrEmpty(address))
             {
-                properties = properties.Where(p =>
-                    p.Address.Contains(searchString) ||
-                    p.Name.Contains(searchString)
-                ).ToList();
+                properties = properties.Where(p => p.Address.Contains(address));
             }
 
-            return View(properties);
+            return View(properties.ToList());
         }
+
+
+
+
 
         // GET: Properties/Details/5
         public ActionResult Details(int? id)
@@ -118,11 +119,20 @@ namespace Property_Rental_Management.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Property property = db.Properties.Find(id);
-            db.Properties.Remove(property);
-            db.SaveChanges();
+            Property property = db.Properties.Include(p => p.Apartments).SingleOrDefault(p => p.PropertyID == id);
+            if (property != null)
+            {
+                // Remove all related apartments
+                db.Apartments.RemoveRange(property.Apartments);
+
+                // Remove the property
+                db.Properties.Remove(property);
+
+                db.SaveChanges();
+            }
             return RedirectToAction("Index");
         }
+
 
         protected override void Dispose(bool disposing)
         {
