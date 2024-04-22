@@ -1,4 +1,4 @@
-﻿@model List<Property_Rental_Managment_WebSite.Models.Appointment>
+﻿@model List<PropertyRentalManagementWebSite.Models.Appointment>
 
 @{
     ViewBag.Title = "Show Requested Appointments";
@@ -25,7 +25,7 @@
                 <td>@appointment.AppointmentID</td>
                 <td>@appointment.SenderID</td>
                 <td>@appointment.RecipientID</td>
-                <td>@(appointment.TimeAndDate?.ToString("g") ?? "N/A")</td>
+                <td>@(appointment.TimeAndDate != DateTime.MinValue ? appointment.TimeAndDate.ToString("g") : "N/A")</td>
                 <!-- Add other fields as necessary -->
             </tr>
         }

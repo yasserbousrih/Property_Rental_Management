@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Property_Rental_Managment_WebSite.Models.Appointment>
+﻿@model IEnumerable<PropertyRentalManagementWebSite.Models.Appointment>
 
 @{
     ViewBag.Title = "Index";
@@ -27,26 +27,27 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TimeAndDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Confirmed)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.User.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.User1.Name)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.AppointmentID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.AppointmentID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.AppointmentID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeAndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Confirmed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User1.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.AppointmentID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.AppointmentID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.AppointmentID })
+            </td>
+        </tr>
+    }
 
 </table>

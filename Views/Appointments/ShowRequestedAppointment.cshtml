@@ -1,4 +1,4 @@
-﻿@model List<Property_Rental_Managment_WebSite.Models.Appointment>
+﻿@model List<PropertyRentalManagementWebSite.Models.Appointment>
 
 @{
     ViewBag.Title = "Show Requested Appointments";
@@ -20,7 +20,7 @@
         {
             <tr>
                 <td>@item.SenderID</td>
-                <td>@(item.TimeAndDate?.ToString("g") ?? "N/A")</td>
+                <td>@(item.TimeAndDate != DateTime.MinValue ? item.TimeAndDate.ToString("g") : "N/A")</td>
                 <td>
                     @using (Html.BeginForm("ConfirmAppointment", "Appointments", new { id = item.AppointmentID }, FormMethod.Post))
                     {

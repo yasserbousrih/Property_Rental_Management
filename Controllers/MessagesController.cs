@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PropertyRentalManagementWebSite.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
-using Property_Rental_Managment_WebSite.Models;
+
 
 
 

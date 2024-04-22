@@ -4,13 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ece1b49995274c0db3abcd367373fcb7" Name="Diagram1">
+      <Diagram DiagramId="00fb46ae310c45eba5aebb59001546c3" Name="Diagram1">
         <EntityTypeShape EntityType="PropertyRentalManagementWebSiteModel.Apartment" Width="1.5" PointX="5.25" PointY="7.25" IsExpanded="true" />
         <EntityTypeShape EntityType="PropertyRentalManagementWebSiteModel.Appointment" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="PropertyRentalManagementWebSiteModel.Message" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
         <EntityTypeShape EntityType="PropertyRentalManagementWebSiteModel.Property" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
         <EntityTypeShape EntityType="PropertyRentalManagementWebSiteModel.User" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
-        <AssociationConnector Association="PropertyRentalManagementWebSiteModel.FK_Apartment_Property" ManuallyRouted="false" />
+        <AssociationConnector Association="PropertyRentalManagementWebSiteModel.FK_Apartments_Properties" ManuallyRouted="false" />
         <AssociationConnector Association="PropertyRentalManagementWebSiteModel.FK__Appointme__Recip__5DCAEF64" ManuallyRouted="false" />
         <AssociationConnector Association="PropertyRentalManagementWebSiteModel.FK__Appointme__Sende__5CD6CB2B" ManuallyRouted="false" />
         <AssociationConnector Association="PropertyRentalManagementWebSiteModel.FK_Messages_Users_Recipient" ManuallyRouted="false" />

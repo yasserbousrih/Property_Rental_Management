@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace Property_Rental_Managment_WebSite
+namespace PropertyRentalManagementWebSite
 {
     public class BundleConfig
     {

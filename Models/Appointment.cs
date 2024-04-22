@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Property_Rental_Managment_WebSite.Models
+namespace PropertyRentalManagementWebSite.Models
 {
     using System;
     using System.Collections.Generic;
@@ -15,10 +15,10 @@ namespace Property_Rental_Managment_WebSite.Models
     public partial class Appointment
     {
         public int AppointmentID { get; set; }
-        public Nullable<int> SenderID { get; set; }
-        public Nullable<int> RecipientID { get; set; }
-        public Nullable<System.DateTime> TimeAndDate { get; set; }
-        public Nullable<bool> Confirmed { get; set; }
+        public int SenderID { get; set; }
+        public int RecipientID { get; set; }
+        public System.DateTime TimeAndDate { get; set; }
+        public bool Confirmed { get; set; }
     
         public virtual User User { get; set; }
         public virtual User User1 { get; set; }

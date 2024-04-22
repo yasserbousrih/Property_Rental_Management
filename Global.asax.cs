@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace Property_Rental_Managment_WebSite
+namespace PropertyRentalManagementWebSite
 {
     public class MvcApplication : System.Web.HttpApplication
     {

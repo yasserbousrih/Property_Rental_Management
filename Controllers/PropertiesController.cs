@@ -8,9 +8,10 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
-using Property_Rental_Managment_WebSite.Models;
 
-namespace Property_Rental_Managment_WebSite.Controllers
+using PropertyRentalManagementWebSite.Models;
+
+namespace PropertyRentalManagementWebSite.Controllers
 {
     public class PropertiesController : Controller
     {
@@ -55,7 +56,6 @@ namespace Property_Rental_Managment_WebSite.Controllers
             return View();
         }
 
-        // POST: Properties/Create
         // POST: Properties/Create
         [HttpPost]
         [ValidateAntiForgeryToken]

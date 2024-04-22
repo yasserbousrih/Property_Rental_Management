@@ -7,7 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
-using Property_Rental_Managment_WebSite.Models;
+using PropertyRentalManagementWebSite.Models;
 
 
 namespace Property_Rental_Managment_WebSite.Controllers

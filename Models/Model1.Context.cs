@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Property_Rental_Managment_WebSite.Models
+namespace PropertyRentalManagementWebSite.Models
 {
     using System;
     using System.Data.Entity;

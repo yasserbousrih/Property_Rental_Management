@@ -9,17 +9,17 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{59C61E97-5A5B-4C36-851F-F079581A7B62}</ProjectGuid>
+    <ProjectGuid>{92EF0B1D-4976-4408-91F2-C80E1E077362}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Property_Rental_Managment_WebSite</RootNamespace>
-    <AssemblyName>Property_Rental_Managment_WebSite</AssemblyName>
+    <RootNamespace>PropertyRentalManagementWebSite</RootNamespace>
+    <AssemblyName>PropertyRentalManagementWebSite</AssemblyName>
     <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44304</IISExpressSSLPort>
+    <IISExpressSSLPort>44302</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -263,13 +263,13 @@
     <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Appointments\ScheduleAppointment.cshtml" />
+    <Content Include="Views\Appointments\ShowConfirmedAppointment.cshtml" />
+    <Content Include="Views\Appointments\ShowRequestedAppointment.cshtml" />
     <Content Include="Views\Messages\Sendmessages.cshtml" />
     <Content Include="Views\Messages\ShowMessages.cshtml" />
     <Content Include="Views\Users\Login.cshtml" />
     <Content Include="Views\Users\SignUp.cshtml" />
-    <Content Include="Views\Appointments\ShowConfirmedAppointment.cshtml" />
-    <Content Include="Views\Appointments\ShowRequestedAppointment.cshtml" />
-    <Content Include="Views\Appointments\ScheduleAppointment.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -321,9 +321,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>51524</DevelopmentServerPort>
+          <DevelopmentServerPort>54253</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44304/</IISUrl>
+          <IISUrl>https://localhost:44302/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

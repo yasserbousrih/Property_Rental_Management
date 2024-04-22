@@ -8,7 +8,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
-using Property_Rental_Managment_WebSite.Models;
+using PropertyRentalManagementWebSite.Models;
 
 
 namespace Property_Rental_Managment_WebSite.Controllers
@@ -79,13 +79,12 @@ namespace Property_Rental_Managment_WebSite.Controllers
         // GET: Apartments/Create
         public ActionResult Create()
         {
-            ViewBag.PropertyID = new SelectList(db.Properties, "PropertyID", "Address");
+            // Use ViewBag to pass the list of Properties to the view
+            ViewBag.PropertyID = new SelectList(db.Properties, "PropertyID", "Name");
             return View();
         }
 
         // POST: Apartments/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "ApartmentID,NumberOfRooms,Rent,Status,PropertyID")] Apartment apartment)
@@ -97,9 +96,11 @@ namespace Property_Rental_Managment_WebSite.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.PropertyID = new SelectList(db.Properties, "PropertyID", "Address", apartment.PropertyID);
+            // If the model state is not valid, repopulate the PropertyID dropdown list
+            ViewBag.PropertyID = new SelectList(db.Properties, "PropertyID", "Name", apartment.PropertyID);
             return View(apartment);
         }
+
 
         // GET: Apartments/Edit/5
         public async Task<ActionResult> Edit(int? id)

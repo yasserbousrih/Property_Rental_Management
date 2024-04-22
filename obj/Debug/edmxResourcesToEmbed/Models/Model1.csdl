@@ -5,21 +5,21 @@
       <PropertyRef Name="ApartmentID" />
     </Key>
     <Property Name="ApartmentID" Type="Int32" Nullable="false" />
-    <Property Name="NumberOfRooms" Type="Int32" />
-    <Property Name="Rent" Type="Decimal" Precision="10" Scale="2" />
-    <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Name="PropertyID" Type="Int32" />
-    <NavigationProperty Name="Property" Relationship="Self.FK_Apartment_Property" FromRole="Apartments" ToRole="Properties" />
+    <Property Name="NumberOfRooms" Type="Int32" Nullable="false" />
+    <Property Name="Rent" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PropertyID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Property" Relationship="Self.FK_Apartments_Properties" FromRole="Apartments" ToRole="Properties" />
   </EntityType>
   <EntityType Name="Appointment">
     <Key>
       <PropertyRef Name="AppointmentID" />
     </Key>
     <Property Name="AppointmentID" Type="Int32" Nullable="false" />
-    <Property Name="SenderID" Type="Int32" />
-    <Property Name="RecipientID" Type="Int32" />
-    <Property Name="TimeAndDate" Type="DateTime" Precision="3" />
-    <Property Name="Confirmed" Type="Boolean" />
+    <Property Name="SenderID" Type="Int32" Nullable="false" />
+    <Property Name="RecipientID" Type="Int32" Nullable="false" />
+    <Property Name="TimeAndDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Confirmed" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="User" Relationship="Self.FK__Appointme__Recip__5DCAEF64" FromRole="Appointments" ToRole="Users" />
     <NavigationProperty Name="User1" Relationship="Self.FK__Appointme__Sende__5CD6CB2B" FromRole="Appointments" ToRole="Users" />
   </EntityType>
@@ -42,7 +42,7 @@
     <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="ManagerID" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Apartments" Relationship="Self.FK_Apartment_Property" FromRole="Properties" ToRole="Apartments" />
+    <NavigationProperty Name="Apartments" Relationship="Self.FK_Apartments_Properties" FromRole="Properties" ToRole="Apartments" />
     <NavigationProperty Name="User" Relationship="Self.FK_Properties_Users" FromRole="Properties" ToRole="Users" />
   </EntityType>
   <EntityType Name="User">
@@ -60,8 +60,8 @@
     <NavigationProperty Name="Messages1" Relationship="Self.FK_Messages_Users_Sender" FromRole="Users" ToRole="Messages" />
     <NavigationProperty Name="Properties" Relationship="Self.FK_Properties_Users" FromRole="Users" ToRole="Properties" />
   </EntityType>
-  <Association Name="FK_Apartment_Property">
-    <End Role="Properties" Type="Self.Property" Multiplicity="0..1" />
+  <Association Name="FK_Apartments_Properties">
+    <End Role="Properties" Type="Self.Property" Multiplicity="1" />
     <End Role="Apartments" Type="Self.Apartment" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Properties">
@@ -73,7 +73,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__Appointme__Recip__5DCAEF64">
-    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
     <End Role="Appointments" Type="Self.Appointment" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Users">
@@ -85,7 +85,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__Appointme__Sende__5CD6CB2B">
-    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
     <End Role="Appointments" Type="Self.Appointment" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Users">
@@ -138,7 +138,7 @@
     <EntitySet Name="Messages" EntityType="Self.Message" />
     <EntitySet Name="Properties" EntityType="Self.Property" />
     <EntitySet Name="Users" EntityType="Self.User" />
-    <AssociationSet Name="FK_Apartment_Property" Association="Self.FK_Apartment_Property">
+    <AssociationSet Name="FK_Apartments_Properties" Association="Self.FK_Apartments_Properties">
       <End Role="Properties" EntitySet="Properties" />
       <End Role="Apartments" EntitySet="Apartments" />
     </AssociationSet>

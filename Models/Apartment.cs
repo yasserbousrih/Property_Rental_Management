@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Property_Rental_Managment_WebSite.Models
+namespace PropertyRentalManagementWebSite.Models
 {
     using System;
     using System.Collections.Generic;
@@ -15,10 +15,10 @@ namespace Property_Rental_Managment_WebSite.Models
     public partial class Apartment
     {
         public int ApartmentID { get; set; }
-        public Nullable<int> NumberOfRooms { get; set; }
-        public Nullable<decimal> Rent { get; set; }
+        public int NumberOfRooms { get; set; }
+        public decimal Rent { get; set; }
         public string Status { get; set; }
-        public Nullable<int> PropertyID { get; set; }
+        public int PropertyID { get; set; }
     
         public virtual Property Property { get; set; }
     }

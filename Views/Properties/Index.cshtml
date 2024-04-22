@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Property_Rental_Managment_WebSite.Models.Property>
+﻿@model IEnumerable<PropertyRentalManagementWebSite.Models.Property>
 
 @{
     ViewBag.Title = "Index";
@@ -10,7 +10,7 @@
 <p>
     @if (Session["User"] != null)
     {
-        var user = (Property_Rental_Managment_WebSite.Models.User)Session["User"];
+        var user = (PropertyRentalManagementWebSite.Models.User)Session["User"];
         if (user.UserType == "a" || user.UserType == "m")
         {
             @Html.ActionLink("Create New", "Create")
@@ -29,6 +29,17 @@
 
 <table class="table">
     <tr>
+        @if (Session["User"] != null)
+        {
+            var user = (PropertyRentalManagementWebSite.Models.User)Session["User"];
+            if (user.UserType == "a" || user.UserType == "m")
+            {
+                <th>
+                    @Html.DisplayNameFor(model => model.PropertyID)
+                </th>
+
+            }
+        }
         <th>
             @Html.DisplayNameFor(model => model.Address)
 
@@ -46,6 +57,17 @@
     @foreach (var item in Model)
     {
         <tr>
+            @if (Session["User"] != null)
+            {
+                var user = (PropertyRentalManagementWebSite.Models.User)Session["User"];
+                if (user.UserType == "a" || user.UserType == "m")
+                {
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PropertyID)
+                    </td>
+
+                }
+            }
             <td>
                 @Html.DisplayFor(modelItem => item.Address)
             </td>
@@ -59,7 +81,7 @@
             <td>
                 @if (Session["User"] != null)
                 {
-                    var user = (Property_Rental_Managment_WebSite.Models.User)Session["User"];
+                    var user = (PropertyRentalManagementWebSite.Models.User)Session["User"];
                     if (user.UserType == "a" || user.UserType == "m")
                     {
                         @Html.ActionLink("Edit", "Edit", new { id = item.PropertyID })

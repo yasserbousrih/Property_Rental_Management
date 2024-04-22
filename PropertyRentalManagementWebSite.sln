@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Property_Rental_Managment_WebSite", "Property_Rental_Managment_WebSite.csproj", "{59C61E97-5A5B-4C36-851F-F079581A7B62}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PropertyRentalManagementWebSite", "PropertyRentalManagementWebSite.csproj", "{92EF0B1D-4976-4408-91F2-C80E1E077362}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{59C61E97-5A5B-4C36-851F-F079581A7B62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{59C61E97-5A5B-4C36-851F-F079581A7B62}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{59C61E97-5A5B-4C36-851F-F079581A7B62}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{59C61E97-5A5B-4C36-851F-F079581A7B62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92EF0B1D-4976-4408-91F2-C80E1E077362}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92EF0B1D-4976-4408-91F2-C80E1E077362}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92EF0B1D-4976-4408-91F2-C80E1E077362}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92EF0B1D-4976-4408-91F2-C80E1E077362}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {39AFECE5-A3C6-4FD9-A1ED-D81E80C3B168}
+		SolutionGuid = {195EDF65-1464-446B-8924-E0F9AA0082AD}
 	EndGlobalSection
 EndGlobal

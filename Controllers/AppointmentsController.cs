@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Property_Rental_Managment_WebSite.Models;
+using PropertyRentalManagementWebSite.Models;
+using System.Data.Entity.Infrastructure;
 
 namespace PropertyRentalManagementWebSite.Controllers
 {
@@ -26,7 +27,6 @@ namespace PropertyRentalManagementWebSite.Controllers
 
             return View();
         }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> ScheduleAppointment([Bind(Include = "RecipientID, TimeAndDate")] Appointment appointment)
@@ -42,21 +42,37 @@ namespace PropertyRentalManagementWebSite.Controllers
                 appointment.SenderID = user.UserID;
                 appointment.Confirmed = false;
 
+                // Check if the date is in the past
+                if (appointment.TimeAndDate < DateTime.Now)
+                {
+                    ModelState.AddModelError("", "Please enter a date and time in the future.");
+                    return View(appointment);
+                }
+
+                // Assign a unique AppointmentID
+                int maxAppointmentID = db.Appointments.Any() ? db.Appointments.Max(a => a.AppointmentID) : 0;
+                appointment.AppointmentID = maxAppointmentID + 1;
+
                 db.Appointments.Add(appointment);
                 try
                 {
                     await db.SaveChangesAsync();
+                    return RedirectToAction("ShowConfirmedAppointment", "Appointments");
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
+                    ModelState.AddModelError("", "An error occurred while saving the appointment. Please try again.");
                 }
-
-                return RedirectToAction("ShowRequestedAppointment", "Appointments");
             }
 
             return View(appointment);
         }
+
+
+
+
+
+
 
 
         public ActionResult ShowConfirmedAppointment()

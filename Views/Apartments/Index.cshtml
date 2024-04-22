@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Property_Rental_Managment_WebSite.Models.Apartment>
+﻿@model IEnumerable<PropertyRentalManagementWebSite.Models.Apartment>
 
 @{
     ViewBag.Title = "Index";
@@ -10,7 +10,7 @@
 <p>
     @if (Session["User"] != null)
     {
-        var user = (Property_Rental_Managment_WebSite.Models.User)Session["User"];
+        var user = (PropertyRentalManagementWebSite.Models.User)Session["User"];
         if (user.UserType == "a" || user.UserType == "m")
         {
             @Html.ActionLink("Create New", "Create")
@@ -60,7 +60,7 @@
             <td>
                 @if (Session["User"] != null)
                 {
-                    var user = (Property_Rental_Managment_WebSite.Models.User)Session["User"];
+                    var user = (PropertyRentalManagementWebSite.Models.User)Session["User"];
                     if (user.UserType == "a" || user.UserType == "m")
                     {
                         @Html.ActionLink("Edit", "Edit", new { id = item.ApartmentID })
