@@ -56,12 +56,22 @@ namespace Property_Rental_Managment_WebSite.Controllers
         }
 
         // POST: Properties/Create
+        // POST: Properties/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "PropertyID,ManagerID,Address,Name")] Property property)
         {
             if (ModelState.IsValid)
             {
+                // Get the logged-in user from the session
+                var user = (User)Session["User"];
+
+                // Check if the user type is 'm' and set the ManagerID to the ID of the logged-in user
+                if (user != null && user.UserType == "m")
+                {
+                    property.ManagerID = user.UserID;
+                }
+
                 db.Properties.Add(property);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -69,6 +79,8 @@ namespace Property_Rental_Managment_WebSite.Controllers
 
             return View(property);
         }
+
+
 
         // GET: Properties/Edit/5
         public ActionResult Edit(int? id)
