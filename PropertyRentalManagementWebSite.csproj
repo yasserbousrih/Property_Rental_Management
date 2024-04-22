@@ -272,6 +272,8 @@
     <Content Include="Views\Users\SignUp.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Apartments\ShowApartments.cshtml" />
+    <Content Include="Views\Properties\ShowProperties.cshtml" />
+    <Content Include="Views\Properties\CreateWithManager.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

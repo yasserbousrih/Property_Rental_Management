@@ -24,7 +24,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="/Properties/Index" class="nav-link">Properties</a>
+                        @Html.ActionLink("Properties", "ShowProperties", "Properties", new { area = "" }, new { @class = "nav-link" })
                     </li>
                     @if (Session["User"] != null)
                     {
@@ -46,16 +46,19 @@
                         if (user.UserType == "a")
                         {
                             <li class="nav-item">
-                                @Html.ActionLink("Apartments", "Index", "Apartments", new { area = "" }, new { @class = "nav-link" })
+                                @Html.ActionLink("Manage Properties", "Index", "Properties", new { area = "" }, new { @class = "nav-link" })
+                            </li>
+                            <li class="nav-item">
+                                @Html.ActionLink("Manage Apartments", "Index", "Apartments", new { area = "" }, new { @class = "nav-link" })
                             </li>
                             <li class="nav-item">
                                 @Html.ActionLink("Manage Messages", "Index", "Messages", new { area = "" }, new { @class = "nav-link" })
                             </li>
                             <li class="nav-item">
-                                @Html.ActionLink("Appointments", "Index", "Appointments", new { area = "" }, new { @class = "nav-link" })
+                                @Html.ActionLink("Manage Appointments", "Index", "Appointments", new { area = "" }, new { @class = "nav-link" })
                             </li>
                             <li class="nav-item">
-                                @Html.ActionLink("Users", "Index", "Users", new { area = "" }, new { @class = "nav-link" })
+                                @Html.ActionLink("Manage Users", "Index", "Users", new { area = "" }, new { @class = "nav-link" })
                             </li>
                         }
                     }
