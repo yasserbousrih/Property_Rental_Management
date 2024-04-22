@@ -1,0 +1,86 @@
+﻿@model IEnumerable<PropertyRentalManagementWebSite.Models.Apartment>
+
+@{
+    ViewBag.Title = "ShowApartments";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Apartments</h2>
+
+<p>
+    @if (Session["User"] != null)
+    {
+        var user = (PropertyRentalManagementWebSite.Models.User)Session["User"];
+        if (user.UserType == "a" || user.UserType == "m")
+        {
+            @Html.ActionLink("Create New", "Create")
+        }
+    }
+</p>
+@using (Html.BeginForm("ShowApartments", "Apartments", FormMethod.Get, new { @class = "form-inline" }))
+{
+    <div class="form-group">
+        @Html.Label("Number of Rooms")
+        @Html.TextBox("numberOfRooms", null, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Rent")
+        @Html.TextBox("rent", null, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Status")
+        @Html.TextBox("status", null, new { @class = "form-control" })
+    </div>
+    <input type="submit" value="Search" class="btn btn-default" />
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Property.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberOfRooms)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Property.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberOfRooms)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @if (Session["User"] != null)
+                {
+                    var user = (PropertyRentalManagementWebSite.Models.User)Session["User"];
+                    if (user.UserType == "a" || user.UserType == "m")
+                    {
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ApartmentID })
+                        <text> | </text>
+                        @Html.ActionLink("Details", "Details", new { id = item.ApartmentID })
+                        <text> | </text>
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ApartmentID })
+                        <text> | </text>
+                    }
+                }
+            </td>
+        </tr>
+    }
+</table>
