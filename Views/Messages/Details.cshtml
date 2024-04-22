@@ -1,4 +1,4 @@
-﻿@model Property_Rental_Management.Models.Message
+﻿@model Property_Rental_Managment_WebSite.Models.Message
 
 @{
     ViewBag.Title = "Details";
@@ -20,19 +20,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.SenderID)
+            @Html.DisplayNameFor(model => model.User.Name)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.SenderID)
+            @Html.DisplayFor(model => model.User.Name)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.RecipientID)
+            @Html.DisplayNameFor(model => model.User1.Name)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.RecipientID)
+            @Html.DisplayFor(model => model.User1.Name)
         </dd>
 
     </dl>

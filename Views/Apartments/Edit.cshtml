@@ -1,4 +1,4 @@
-﻿@model Property_Rental_Management.Models.Apartment
+﻿@model Property_Rental_Managment_WebSite.Models.Apartment
 
 @{
     ViewBag.Title = "Edit";
@@ -6,6 +6,7 @@
 }
 
 <h2>Edit</h2>
+
 
 @using (Html.BeginForm())
 {
@@ -60,3 +61,7 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

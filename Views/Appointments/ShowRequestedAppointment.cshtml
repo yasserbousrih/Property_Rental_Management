@@ -1,0 +1,33 @@
+﻿@model List<Property_Rental_Managment_WebSite.Models.Appointment>
+
+@{
+    ViewBag.Title = "Show Requested Appointments";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Show Requested Appointments</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Sender ID</th>
+            <th>Time and Date</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.SenderID</td>
+                <td>@(item.TimeAndDate?.ToString("g") ?? "N/A")</td>
+                <td>
+                    @using (Html.BeginForm("ConfirmAppointment", "Appointments", new { id = item.AppointmentID }, FormMethod.Post))
+                    {
+                        <input type="submit" value="Confirm" class="btn btn-primary" />
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

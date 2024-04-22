@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Property_Rental_Management.Models.Message>
+﻿@model IEnumerable<Property_Rental_Managment_WebSite.Models.Message>
 
 @{
     ViewBag.Title = "Index";
@@ -16,10 +16,10 @@
             @Html.DisplayNameFor(model => model.Content)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SenderID)
+            @Html.DisplayNameFor(model => model.User.Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.RecipientID)
+            @Html.DisplayNameFor(model => model.User1.Name)
         </th>
         <th></th>
     </tr>
@@ -30,10 +30,10 @@
             @Html.DisplayFor(modelItem => item.Content)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.SenderID)
+            @Html.DisplayFor(modelItem => item.User.Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.RecipientID)
+            @Html.DisplayFor(modelItem => item.User1.Name)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.MessageID }) |

@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Property_Rental_Management.Models
+namespace Property_Rental_Managment_WebSite.Models
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PropertyRentalManagementWebSiteEntities2 : DbContext
+    public partial class PropertyRentalManagementWebSiteEntities : DbContext
     {
-        public PropertyRentalManagementWebSiteEntities2()
-            : base("name=PropertyRentalManagementWebSiteEntities2")
+        public PropertyRentalManagementWebSiteEntities()
+            : base("name=PropertyRentalManagementWebSiteEntities")
         {
         }
     
@@ -25,11 +25,10 @@ namespace Property_Rental_Management.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Apartment> Apartments { get; set; }
         public virtual DbSet<Appointment> Appointments { get; set; }
         public virtual DbSet<Message> Messages { get; set; }
         public virtual DbSet<Property> Properties { get; set; }
         public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<Apartment> Apartments { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

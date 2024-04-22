@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Property_Rental_Management.Models
+namespace Property_Rental_Managment_WebSite.Models
 {
     using System;
     using System.Collections.Generic;
@@ -21,12 +21,12 @@ namespace Property_Rental_Management.Models
         }
     
         public int PropertyID { get; set; }
-        public int ManagerID { get; set; }
         public string Address { get; set; }
         public string Name { get; set; }
+        public int ManagerID { get; set; }
     
-        public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Apartment> Apartments { get; set; }
+        public virtual User User { get; set; }
     }
 }

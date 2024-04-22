@@ -1,10 +1,10 @@
-﻿@model Property_Rental_Management.Models.Property
+﻿@model Property_Rental_Managment_WebSite.Models.Property
 
 @{
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
     // Retrieve user information from session
-    var user = (Property_Rental_Management.Models.User)Session["User"];
+    var user = (Property_Rental_Managment_WebSite.Models.User)Session["User"];
     // Check if the user is a manager or an administrator
     bool isManager = user != null && user.UserType == "m";
     bool isAdmin = user != null && user.UserType == "a";

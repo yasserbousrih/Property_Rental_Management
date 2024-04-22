@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Property_Rental_Management.Data;
-using Property_Rental_Management.Models;
+
+using Property_Rental_Managment_WebSite.Models;
 
 
-namespace Property_Rental_Management.Controllers
+namespace Property_Rental_Managment_WebSite.Controllers
 {
     public class ApartmentsController : Controller
     {
-        private Property_Rental_ManagementContext db = new Property_Rental_ManagementContext();
+        private PropertyRentalManagementWebSiteEntities db = new PropertyRentalManagementWebSiteEntities();
 
         // GET: Apartments
         public async Task<ActionResult> Index(int? propertyId, string searchString)

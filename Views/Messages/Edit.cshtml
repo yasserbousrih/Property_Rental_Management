@@ -1,4 +1,4 @@
-﻿@model Property_Rental_Management.Models.Message
+﻿@model Property_Rental_Managment_WebSite.Models.Message
 
 @{
     ViewBag.Title = "Edit";
@@ -27,17 +27,17 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.SenderID, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.SenderID, "SenderID", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.SenderID, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownList("SenderID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.SenderID, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.RecipientID, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.RecipientID, "RecipientID", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.RecipientID, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownList("RecipientID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.RecipientID, "", new { @class = "text-danger" })
             </div>
         </div>

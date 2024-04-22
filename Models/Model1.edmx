@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="PropertyRentalManagementWebSiteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="PropertyRentalManagementWebSiteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Apartments">
           <Key>
             <PropertyRef Name="ApartmentID" />
@@ -19,10 +19,11 @@
           <Key>
             <PropertyRef Name="AppointmentID" />
           </Key>
-          <Property Name="AppointmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="DateAndTime" Type="datetime" Nullable="false" />
-          <Property Name="Description" Type="nvarchar(max)" />
-          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="AppointmentID" Type="int" Nullable="false" />
+          <Property Name="SenderID" Type="int" />
+          <Property Name="RecipientID" Type="int" />
+          <Property Name="TimeAndDate" Type="datetime" />
+          <Property Name="Confirmed" Type="bit" />
         </EntityType>
         <EntityType Name="Messages">
           <Key>
@@ -42,16 +43,6 @@
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="ManagerID" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="UserID" />
@@ -62,6 +53,30 @@
           <Property Name="Password" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="UserType" Type="char" MaxLength="1" Nullable="false" />
         </EntityType>
+        <Association Name="FK__Appointme__Recip__5DCAEF64">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Appointments" Type="Self.Appointments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Appointments">
+              <PropertyRef Name="RecipientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Appointme__Sende__5CD6CB2B">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Appointments" Type="Self.Appointments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Appointments">
+              <PropertyRef Name="SenderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Apartment_Property">
           <End Role="Properties" Type="Self.Properties" Multiplicity="0..1" />
           <End Role="Apartments" Type="Self.Apartments" Multiplicity="*" />
@@ -71,18 +86,6 @@
             </Principal>
             <Dependent Role="Apartments">
               <PropertyRef Name="PropertyID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Appointments_Users">
-          <End Role="Users" Type="Self.Users" Multiplicity="1" />
-          <End Role="Appointments" Type="Self.Appointments" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Users">
-              <PropertyRef Name="UserID" />
-            </Principal>
-            <Dependent Role="Appointments">
-              <PropertyRef Name="UserID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -127,15 +130,18 @@
           <EntitySet Name="Appointments" EntityType="Self.Appointments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Messages" EntityType="Self.Messages" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Properties" EntityType="Self.Properties" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Appointme__Recip__5DCAEF64" Association="Self.FK__Appointme__Recip__5DCAEF64">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Appointments" EntitySet="Appointments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Appointme__Sende__5CD6CB2B" Association="Self.FK__Appointme__Sende__5CD6CB2B">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Appointments" EntitySet="Appointments" />
+          </AssociationSet>
           <AssociationSet Name="FK_Apartment_Property" Association="Self.FK_Apartment_Property">
             <End Role="Properties" EntitySet="Properties" />
             <End Role="Apartments" EntitySet="Apartments" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Appointments_Users" Association="Self.FK_Appointments_Users">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="Appointments" EntitySet="Appointments" />
           </AssociationSet>
           <AssociationSet Name="FK_Messages_Users_Recipient" Association="Self.FK_Messages_Users_Recipient">
             <End Role="Users" EntitySet="Users" />
@@ -150,19 +156,33 @@
             <End Role="Properties" EntitySet="Properties" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PropertyRentalManagementWebSiteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Apartment">
+          <Key>
+            <PropertyRef Name="ApartmentID" />
+          </Key>
+          <Property Name="ApartmentID" Type="Int32" Nullable="false" />
+          <Property Name="NumberOfRooms" Type="Int32" />
+          <Property Name="Rent" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="PropertyID" Type="Int32" />
+          <NavigationProperty Name="Property" Relationship="Self.FK_Apartment_Property" FromRole="Apartments" ToRole="Properties" />
+        </EntityType>
         <EntityType Name="Appointment">
           <Key>
             <PropertyRef Name="AppointmentID" />
           </Key>
-          <Property Name="AppointmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="DateAndTime" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="UserID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="User" Relationship="Self.FK_Appointments_Users" FromRole="Appointments" ToRole="Users" />
+          <Property Name="AppointmentID" Type="Int32" Nullable="false" />
+          <Property Name="SenderID" Type="Int32" />
+          <Property Name="RecipientID" Type="Int32" />
+          <Property Name="TimeAndDate" Type="DateTime" Precision="3" />
+          <Property Name="Confirmed" Type="Boolean" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Appointme__Recip__5DCAEF64" FromRole="Appointments" ToRole="Users" />
+          <NavigationProperty Name="User1" Relationship="Self.FK__Appointme__Sende__5CD6CB2B" FromRole="Appointments" ToRole="Users" />
         </EntityType>
         <EntityType Name="Message">
           <Key>
@@ -180,11 +200,11 @@
             <PropertyRef Name="PropertyID" />
           </Key>
           <Property Name="PropertyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ManagerID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Apartments" Relationship="Self.FK_Apartment_Property" FromRole="Properties" ToRole="Apartments" />
           <NavigationProperty Name="User" Relationship="Self.FK_Properties_Users" FromRole="Properties" ToRole="Users" />
-          <Property Name="Address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Apartments" Relationship="PropertyRentalManagementWebSiteModel.FK_Apartment_Property" FromRole="Property" ToRole="Apartment" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -195,20 +215,45 @@
           <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="UserType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Appointments" Relationship="Self.FK_Appointments_Users" FromRole="Users" ToRole="Appointments" />
+          <NavigationProperty Name="Appointments" Relationship="Self.FK__Appointme__Recip__5DCAEF64" FromRole="Users" ToRole="Appointments" />
+          <NavigationProperty Name="Appointments1" Relationship="Self.FK__Appointme__Sende__5CD6CB2B" FromRole="Users" ToRole="Appointments" />
           <NavigationProperty Name="Messages" Relationship="Self.FK_Messages_Users_Recipient" FromRole="Users" ToRole="Messages" />
           <NavigationProperty Name="Messages1" Relationship="Self.FK_Messages_Users_Sender" FromRole="Users" ToRole="Messages" />
           <NavigationProperty Name="Properties" Relationship="Self.FK_Properties_Users" FromRole="Users" ToRole="Properties" />
         </EntityType>
-        <Association Name="FK_Appointments_Users">
-          <End Role="Users" Type="Self.User" Multiplicity="1" />
+        <Association Name="FK_Apartment_Property">
+          <End Role="Properties" Type="Self.Property" Multiplicity="0..1" />
+          <End Role="Apartments" Type="Self.Apartment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Properties">
+              <PropertyRef Name="PropertyID" />
+            </Principal>
+            <Dependent Role="Apartments">
+              <PropertyRef Name="PropertyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Appointme__Recip__5DCAEF64">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
           <End Role="Appointments" Type="Self.Appointment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserID" />
             </Principal>
             <Dependent Role="Appointments">
+              <PropertyRef Name="RecipientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Appointme__Sende__5CD6CB2B">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Appointments" Type="Self.Appointment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
               <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Appointments">
+              <PropertyRef Name="SenderID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -248,12 +293,21 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="PropertyRentalManagementWebSiteEntities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="PropertyRentalManagementWebSiteEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Apartments" EntityType="Self.Apartment" />
           <EntitySet Name="Appointments" EntityType="Self.Appointment" />
           <EntitySet Name="Messages" EntityType="Self.Message" />
           <EntitySet Name="Properties" EntityType="Self.Property" />
           <EntitySet Name="Users" EntityType="Self.User" />
-          <AssociationSet Name="FK_Appointments_Users" Association="Self.FK_Appointments_Users">
+          <AssociationSet Name="FK_Apartment_Property" Association="Self.FK_Apartment_Property">
+            <End Role="Properties" EntitySet="Properties" />
+            <End Role="Apartments" EntitySet="Apartments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Appointme__Recip__5DCAEF64" Association="Self.FK__Appointme__Recip__5DCAEF64">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Appointments" EntitySet="Appointments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Appointme__Sende__5CD6CB2B" Association="Self.FK__Appointme__Sende__5CD6CB2B">
             <End Role="Users" EntitySet="Users" />
             <End Role="Appointments" EntitySet="Appointments" />
           </AssociationSet>
@@ -269,59 +323,32 @@
             <End Role="Users" EntitySet="Users" />
             <End Role="Properties" EntitySet="Properties" />
           </AssociationSet>
-          <EntitySet Name="Apartments" EntityType="PropertyRentalManagementWebSiteModel.Apartment" />
-          <EntitySet Name="sysdiagrams" EntityType="PropertyRentalManagementWebSiteModel.sysdiagram" />
-          <AssociationSet Name="FK_Apartment_Property" Association="PropertyRentalManagementWebSiteModel.FK_Apartment_Property">
-            <End Role="Property" EntitySet="Properties" />
-            <End Role="Apartment" EntitySet="Apartments" />
-          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Apartment">
-          <Key>
-            <PropertyRef Name="ApartmentID" />
-          </Key>
-          <Property Name="ApartmentID" Type="Int32" Nullable="false" />
-          <Property Name="NumberOfRooms" Type="Int32" />
-          <Property Name="Rent" Type="Decimal" Precision="10" Scale="2" />
-          <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="PropertyID" Type="Int32" />
-          <NavigationProperty Name="Property" Relationship="PropertyRentalManagementWebSiteModel.FK_Apartment_Property" FromRole="Apartment" ToRole="Property" />
-        </EntityType>
-        <EntityType Name="sysdiagram">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
-        <Association Name="FK_Apartment_Property">
-          <End Type="PropertyRentalManagementWebSiteModel.Property" Role="Property" Multiplicity="0..1" />
-          <End Type="PropertyRentalManagementWebSiteModel.Apartment" Role="Apartment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Property">
-              <PropertyRef Name="PropertyID" />
-            </Principal>
-            <Dependent Role="Apartment">
-              <PropertyRef Name="PropertyID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="PropertyRentalManagementWebSiteModelStoreContainer" CdmEntityContainer="PropertyRentalManagementWebSiteEntities2">
+        <EntityContainerMapping StorageEntityContainer="PropertyRentalManagementWebSiteModelStoreContainer" CdmEntityContainer="PropertyRentalManagementWebSiteEntities">
+          <EntitySetMapping Name="Apartments">
+            <EntityTypeMapping TypeName="PropertyRentalManagementWebSiteModel.Apartment">
+              <MappingFragment StoreEntitySet="Apartments">
+                <ScalarProperty Name="ApartmentID" ColumnName="ApartmentID" />
+                <ScalarProperty Name="NumberOfRooms" ColumnName="NumberOfRooms" />
+                <ScalarProperty Name="Rent" ColumnName="Rent" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Appointments">
             <EntityTypeMapping TypeName="PropertyRentalManagementWebSiteModel.Appointment">
               <MappingFragment StoreEntitySet="Appointments">
                 <ScalarProperty Name="AppointmentID" ColumnName="AppointmentID" />
-                <ScalarProperty Name="DateAndTime" ColumnName="DateAndTime" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="SenderID" ColumnName="SenderID" />
+                <ScalarProperty Name="RecipientID" ColumnName="RecipientID" />
+                <ScalarProperty Name="TimeAndDate" ColumnName="TimeAndDate" />
+                <ScalarProperty Name="Confirmed" ColumnName="Confirmed" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -338,9 +365,9 @@
           <EntitySetMapping Name="Properties">
             <EntityTypeMapping TypeName="PropertyRentalManagementWebSiteModel.Property">
               <MappingFragment StoreEntitySet="Properties">
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="ManagerID" ColumnName="ManagerID" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -353,28 +380,6 @@
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="UserType" ColumnName="UserType" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Apartments">
-            <EntityTypeMapping TypeName="PropertyRentalManagementWebSiteModel.Apartment">
-              <MappingFragment StoreEntitySet="Apartments">
-                <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="Rent" ColumnName="Rent" />
-                <ScalarProperty Name="NumberOfRooms" ColumnName="NumberOfRooms" />
-                <ScalarProperty Name="ApartmentID" ColumnName="ApartmentID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="PropertyRentalManagementWebSiteModel.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="definition" ColumnName="definition" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

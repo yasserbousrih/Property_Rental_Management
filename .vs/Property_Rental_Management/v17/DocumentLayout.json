@@ -3,24 +3,20 @@
   "WorkspaceRootPath": "D:\\Personal Projects\\Property_Rental_Management\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|d:\\personal projects\\property_rental_management\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\migrations\\202404180201409_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:migrations\\202404180201409_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\views\\users\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:views\\users\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\views\\users\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:views\\users\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|d:\\personal projects\\property_rental_management\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\views\\properties\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:views\\properties\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\controllers\\propertiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -31,15 +27,95 @@
       "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:controllers\\messagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|d:\\personal projects\\property_rental_management\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\controllers\\appointmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:controllers\\appointmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\controllers\\apartmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|d:\\personal projects\\property_rental_management\\controllers\\apartmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:controllers\\apartmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\views\\messages\\showmessages.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|d:\\personal projects\\property_rental_management\\views\\messages\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:views\\messages\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\Views\\Home\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:Views\\Home\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\views\\appointments\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:views\\appointments\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\views\\appointments\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:views\\appointments\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\views\\appointments\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:views\\appointments\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|d:\\personal projects\\property_rental_management\\views\\apartments\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:views\\apartments\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|d:\\personal projects\\property_rental_management\\views\\apartments\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:views\\apartments\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|d:\\personal projects\\property_rental_management\\views\\apartments\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:views\\apartments\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|d:\\personal projects\\property_rental_management\\views\\apartments\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:views\\apartments\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|d:\\personal projects\\property_rental_management\\views\\apartments\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:views\\apartments\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\views\\appointments\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:views\\appointments\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\views\\appointments\\showrequestedappointment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:views\\appointments\\showrequestedappointment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\views\\appointments\\showconfirmedappointment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:views\\appointments\\showconfirmedappointment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\views\\appointments\\scheduleappointment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:views\\appointments\\scheduleappointment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|d:\\personal projects\\property_rental_management\\views\\users\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:views\\users\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\views\\users\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:views\\users\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|d:\\personal projects\\property_rental_management\\views\\properties\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:views\\properties\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|d:\\personal projects\\property_rental_management\\views\\properties\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:views\\properties\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|d:\\personal projects\\property_rental_management\\views\\properties\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:views\\properties\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|d:\\personal projects\\property_rental_management\\views\\messages\\showmessages.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:views\\messages\\showmessages.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
@@ -47,36 +123,52 @@
       "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:views\\messages\\sendmessages.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\views\\apartments\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:views\\apartments\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|d:\\personal projects\\property_rental_management\\data\\property_rental_managementcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:data\\property_rental_managementcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\Views\\Home\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:Views\\Home\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\app_start\\filterconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:app_start\\filterconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\app_start\\bundleconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:app_start\\bundleconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\views\\messages\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:views\\messages\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\views\\messages\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:views\\messages\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\migrations\\202404200330243_yourmigrationname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:migrations\\202404200330243_yourmigrationname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\views\\messages\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:views\\messages\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\migrations\\202404191034584_updatepropertymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:migrations\\202404191034584_updatepropertymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\views\\messages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:views\\messages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\models\\apartment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:models\\apartment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\views\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:views\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\views\\users\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:views\\users\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\views\\appointments\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:views\\appointments\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|D:\\Personal Projects\\Property_Rental_Management\\models\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB812C79-4C9D-4461-A9D5-E99B1FAE8B76}|Property_Rental_Management.csproj|solutionrelative:models\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -86,20 +178,385 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 10,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
               "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAACgAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-04-19T11:08:20.619Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_LoginPartial.cshtml",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_LoginPartial.cshtml",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_LoginPartial.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-22T00:41:43.739Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAYwAoAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T00:38:47.344Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ApartmentsController.cs",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Controllers\\ApartmentsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ApartmentsController.cs",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Controllers\\ApartmentsController.cs",
+              "RelativeToolTip": "Controllers\\ApartmentsController.cs",
+              "ViewState": "AQIAAI0AAAAAAAAAAAAwwKwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T00:35:36.333Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AppointmentsController.cs",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Controllers\\AppointmentsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AppointmentsController.cs",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Controllers\\AppointmentsController.cs",
+              "RelativeToolTip": "Controllers\\AppointmentsController.cs",
+              "ViewState": "AQIAALAAAAAAAAAAAAAowOIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T07:19:50.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MessagesController.cs",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Controllers\\MessagesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MessagesController.cs",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Controllers\\MessagesController.cs",
+              "RelativeToolTip": "Controllers\\MessagesController.cs",
+              "ViewState": "AQIAALgAAAAAAAAAAAAAAPMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T07:27:36.426Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PropertiesController.cs",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Controllers\\PropertiesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PropertiesController.cs",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Controllers\\PropertiesController.cs",
+              "RelativeToolTip": "Controllers\\PropertiesController.cs",
+              "ViewState": "AQIAAHMAAAAAAAAAAAAQwJIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T08:11:26.295Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Controllers\\UsersController.cs",
+              "ViewState": "AQIAALgAAAAAAAAAAAAQwNcAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T01:08:09.02Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "202404180201409_InitialCreate.cs",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Migrations\\202404180201409_InitialCreate.cs",
+              "RelativeDocumentMoniker": "Migrations\\202404180201409_InitialCreate.cs",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Migrations\\202404180201409_InitialCreate.cs*",
+              "RelativeToolTip": "Migrations\\202404180201409_InitialCreate.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEgAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T08:46:12.985Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Messages\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Messages\\Create.cshtml",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Messages\\Create.cshtml",
+              "RelativeToolTip": "Views\\Messages\\Create.cshtml",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-22T00:35:24.475Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Appointments\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Appointments\\Edit.cshtml",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Appointments\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Appointments\\Edit.cshtml",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-21T07:41:36.943Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAEoAAAAAAAAAAAAuwFcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-21T01:41:50.807Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Appointments\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Appointments\\Details.cshtml",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Appointments\\Details.cshtml",
+              "RelativeToolTip": "Views\\Appointments\\Details.cshtml",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-21T07:41:35.521Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Appointments\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Views\\Appointments\\Delete.cshtml",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Appointments\\Delete.cshtml",
+              "RelativeToolTip": "Views\\Appointments\\Delete.cshtml",
+              "ViewState": "AQIAACQAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-21T07:41:34.599Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Apartments\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Apartments\\Create.cshtml",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Apartments\\Create.cshtml",
+              "RelativeToolTip": "Views\\Apartments\\Create.cshtml",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-22T00:35:02.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Apartments\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Views\\Apartments\\Delete.cshtml",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Apartments\\Delete.cshtml",
+              "RelativeToolTip": "Views\\Apartments\\Delete.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-22T00:34:57.278Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Apartments\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Apartments\\Edit.cshtml",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Apartments\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Apartments\\Edit.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-22T00:34:47.141Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Apartments\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Apartments\\Details.cshtml",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Apartments\\Details.cshtml",
+              "RelativeToolTip": "Views\\Apartments\\Details.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-22T00:34:46.517Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Apartments\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Apartments\\Index.cshtml",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Apartments\\Index.cshtml",
+              "RelativeToolTip": "Views\\Apartments\\Index.cshtml",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAuwFAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-22T00:34:10.266Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ShowRequestedAppointment.cshtml",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Appointments\\ShowRequestedAppointment.cshtml",
+              "RelativeDocumentMoniker": "Views\\Appointments\\ShowRequestedAppointment.cshtml",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Appointments\\ShowRequestedAppointment.cshtml",
+              "RelativeToolTip": "Views\\Appointments\\ShowRequestedAppointment.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-21T07:45:46.021Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Appointments\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Appointments\\Index.cshtml",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Appointments\\Index.cshtml",
+              "RelativeToolTip": "Views\\Appointments\\Index.cshtml",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-21T07:41:19.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ShowConfirmedAppointment.cshtml",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Appointments\\ShowConfirmedAppointment.cshtml",
+              "RelativeDocumentMoniker": "Views\\Appointments\\ShowConfirmedAppointment.cshtml",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Appointments\\ShowConfirmedAppointment.cshtml",
+              "RelativeToolTip": "Views\\Appointments\\ShowConfirmedAppointment.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-21T07:46:32.884Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ScheduleAppointment.cshtml",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Appointments\\ScheduleAppointment.cshtml",
+              "RelativeDocumentMoniker": "Views\\Appointments\\ScheduleAppointment.cshtml",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Appointments\\ScheduleAppointment.cshtml",
+              "RelativeToolTip": "Views\\Appointments\\ScheduleAppointment.cshtml",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAuwC0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-21T07:29:27.758Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "SignUp.cshtml",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Users\\SignUp.cshtml",
+              "RelativeDocumentMoniker": "Views\\Users\\SignUp.cshtml",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Users\\SignUp.cshtml",
+              "RelativeToolTip": "Views\\Users\\SignUp.cshtml",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAuwCUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-22T00:31:36.028Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Properties\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Properties\\Create.cshtml",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Properties\\Create.cshtml",
+              "RelativeToolTip": "Views\\Properties\\Create.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-22T00:28:53.537Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Users\\Login.cshtml",
+              "RelativeDocumentMoniker": "Views\\Users\\Login.cshtml",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Users\\Login.cshtml",
+              "RelativeToolTip": "Views\\Users\\Login.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-21T08:02:36.921Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Properties\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Views\\Properties\\Delete.cshtml",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Properties\\Delete.cshtml",
+              "RelativeToolTip": "Views\\Properties\\Delete.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-22T00:28:36.744Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Properties\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Properties\\Index.cshtml",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Properties\\Index.cshtml",
+              "RelativeToolTip": "Views\\Properties\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-22T00:27:41.139Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "ShowMessages.cshtml",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Messages\\ShowMessages.cshtml",
+              "RelativeDocumentMoniker": "Views\\Messages\\ShowMessages.cshtml",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Messages\\ShowMessages.cshtml",
+              "RelativeToolTip": "Views\\Messages\\ShowMessages.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAABcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-22T00:27:30.727Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -111,220 +568,165 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Users\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Users\\Index.cshtml",
-              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Users\\Index.cshtml",
-              "RelativeToolTip": "Views\\Users\\Index.cshtml",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAcwDoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-21T01:41:59.77Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Users\\Edit.cshtml",
-              "RelativeDocumentMoniker": "Views\\Users\\Edit.cshtml",
-              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Users\\Edit.cshtml",
-              "RelativeToolTip": "Views\\Users\\Edit.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-21T01:41:58.627Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Controllers\\UsersController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
-              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "Controllers\\UsersController.cs",
-              "ViewState": "AQIAALcAAAAAAAAAAAA4wMYAAAAJAAAA",
+              "DocumentIndex": 30,
+              "Title": "Property_Rental_ManagementContext.cs",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Data\\Property_Rental_ManagementContext.cs",
+              "RelativeDocumentMoniker": "Data\\Property_Rental_ManagementContext.cs",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Data\\Property_Rental_ManagementContext.cs",
+              "RelativeToolTip": "Data\\Property_Rental_ManagementContext.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAACAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-21T01:08:09.02Z",
+              "WhenOpened": "2024-04-21T08:36:50.728Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAACgAAAAAAAAAAAAcwFQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-21T01:41:50.807Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MessagesController.cs",
-              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Controllers\\MessagesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\MessagesController.cs",
-              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Controllers\\MessagesController.cs",
-              "RelativeToolTip": "Controllers\\MessagesController.cs",
-              "ViewState": "AQIAAMsAAAAAAAAAAAAgwPMAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-21T01:18:40.647Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "PropertiesController.cs",
-              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Controllers\\PropertiesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\PropertiesController.cs",
-              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Controllers\\PropertiesController.cs",
-              "RelativeToolTip": "Controllers\\PropertiesController.cs",
-              "ViewState": "AQIAAGkAAAAAAAAAAAAkwJIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-20T23:47:49.756Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Properties\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Properties\\Index.cshtml",
-              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Properties\\Index.cshtml",
-              "RelativeToolTip": "Views\\Properties\\Index.cshtml",
-              "ViewState": "AQIAACYAAAAAAAAAAAAcwFIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-20T23:50:02.144Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AppointmentsController.cs",
-              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Controllers\\AppointmentsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AppointmentsController.cs",
-              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Controllers\\AppointmentsController.cs",
-              "RelativeToolTip": "Controllers\\AppointmentsController.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAYwDwAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-21T01:03:11.603Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ApartmentsController.cs",
-              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Controllers\\ApartmentsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ApartmentsController.cs",
-              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Controllers\\ApartmentsController.cs",
-              "RelativeToolTip": "Controllers\\ApartmentsController.cs",
-              "ViewState": "AQIAAIYAAAAAAAAAAAAUwKwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-20T23:46:06.612Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ShowMessages.cshtml",
-              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Messages\\ShowMessages.cshtml",
-              "RelativeDocumentMoniker": "Views\\Messages\\ShowMessages.cshtml",
-              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Messages\\ShowMessages.cshtml",
-              "RelativeToolTip": "Views\\Messages\\ShowMessages.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAABcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-20T23:52:50.713Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 29,
               "Title": "Sendmessages.cshtml",
               "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Messages\\Sendmessages.cshtml",
               "RelativeDocumentMoniker": "Views\\Messages\\Sendmessages.cshtml",
               "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Messages\\Sendmessages.cshtml",
               "RelativeToolTip": "Views\\Messages\\Sendmessages.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACoAAAAAAAAA",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAuwCoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-21T01:08:13.176Z"
+              "WhenOpened": "2024-04-21T01:08:13.176Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "DocumentIndex": 32,
+              "Title": "BundleConfig.cs",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\App_Start\\BundleConfig.cs",
+              "RelativeDocumentMoniker": "App_Start\\BundleConfig.cs",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\App_Start\\BundleConfig.cs",
+              "RelativeToolTip": "App_Start\\BundleConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-21T01:02:01.843Z"
+              "WhenOpened": "2024-04-21T23:43:50.803Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Apartments\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Apartments\\Index.cshtml",
-              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Apartments\\Index.cshtml",
-              "RelativeToolTip": "Views\\Apartments\\Index.cshtml",
-              "ViewState": "AQIAACIAAAAAAAAAAAArwDkAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-20T23:45:52.643Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Delete.cshtml",
-              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Messages\\Delete.cshtml",
-              "RelativeDocumentMoniker": "Views\\Messages\\Delete.cshtml",
-              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Messages\\Delete.cshtml",
-              "RelativeToolTip": "Views\\Messages\\Delete.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-21T01:08:41.826Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Messages\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Messages\\Index.cshtml",
-              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Messages\\Index.cshtml",
-              "RelativeToolTip": "Views\\Messages\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-21T01:08:37.027Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Messages\\Edit.cshtml",
-              "RelativeDocumentMoniker": "Views\\Messages\\Edit.cshtml",
-              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Messages\\Edit.cshtml",
-              "RelativeToolTip": "Views\\Messages\\Edit.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-21T01:08:39.836Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Messages\\Details.cshtml",
-              "RelativeDocumentMoniker": "Views\\Messages\\Details.cshtml",
-              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Messages\\Details.cshtml",
-              "RelativeToolTip": "Views\\Messages\\Details.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-21T01:08:40.801Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Apartment.cs",
-              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Models\\Apartment.cs",
-              "RelativeDocumentMoniker": "Models\\Apartment.cs",
-              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Models\\Apartment.cs",
-              "RelativeToolTip": "Models\\Apartment.cs",
+              "DocumentIndex": 31,
+              "Title": "FilterConfig.cs",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\App_Start\\FilterConfig.cs",
+              "RelativeDocumentMoniker": "App_Start\\FilterConfig.cs",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\App_Start\\FilterConfig.cs",
+              "RelativeToolTip": "App_Start\\FilterConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-20T23:45:39.061Z"
+              "WhenOpened": "2024-04-21T23:43:50.096Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Model1.edmx [Diagram1]",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Models\\Model1.edmx",
+              "RelativeDocumentMoniker": "Models\\Model1.edmx",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Models\\Model1.edmx [Diagram1]",
+              "RelativeToolTip": "Models\\Model1.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2024-04-21T07:05:31.443Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "202404200330243_YourMigrationName.cs",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Migrations\\202404200330243_YourMigrationName.cs",
+              "RelativeDocumentMoniker": "Migrations\\202404200330243_YourMigrationName.cs",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Migrations\\202404200330243_YourMigrationName.cs",
+              "RelativeToolTip": "Migrations\\202404200330243_YourMigrationName.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T08:46:12.237Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "202404191034584_UpdatePropertyModel.cs",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Migrations\\202404191034584_UpdatePropertyModel.cs",
+              "RelativeDocumentMoniker": "Migrations\\202404191034584_UpdatePropertyModel.cs",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Migrations\\202404191034584_UpdatePropertyModel.cs",
+              "RelativeToolTip": "Migrations\\202404191034584_UpdatePropertyModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T08:46:02.542Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "packages.config",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\packages.config",
+              "RelativeDocumentMoniker": "packages.config",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\packages.config",
+              "RelativeToolTip": "packages.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-04-21T08:45:47.191Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Appointments\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Appointments\\Create.cshtml",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Appointments\\Create.cshtml",
+              "RelativeToolTip": "Views\\Appointments\\Create.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-21T07:41:27.41Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Web.config",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Web.config",
+              "RelativeDocumentMoniker": "Web.config",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Web.config",
+              "RelativeToolTip": "Web.config",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAAEYAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-04-21T08:30:05.022Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "Web.config",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Web.config",
+              "RelativeDocumentMoniker": "Views\\Web.config",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Web.config",
+              "RelativeToolTip": "Views\\Web.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-04-21T08:29:52.237Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Users\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Users\\Index.cshtml",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Views\\Users\\Index.cshtml",
+              "RelativeToolTip": "Views\\Users\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADYAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-21T01:41:59.77Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "Appointment.cs",
+              "DocumentMoniker": "D:\\Personal Projects\\Property_Rental_Management\\Models\\Appointment.cs",
+              "RelativeDocumentMoniker": "Models\\Appointment.cs",
+              "ToolTip": "D:\\Personal Projects\\Property_Rental_Management\\Models\\Appointment.cs",
+              "RelativeToolTip": "Models\\Appointment.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAuwBwAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T07:24:02.081Z"
             }
           ]
         }

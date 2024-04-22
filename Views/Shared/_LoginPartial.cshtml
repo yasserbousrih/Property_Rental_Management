@@ -1,8 +1,9 @@
-﻿@{
+﻿
+@{
     var userName = "";
     if (Session["User"] != null)
     {
-        userName = ((Property_Rental_Management.Models.User)Session["User"]).Name;
+        userName = ((Property_Rental_Managment_WebSite.Models.User)Session["User"]).Name;
     }
 }
 <ul class="navbar-nav navbar-right">

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Property_Rental_Management.Models
+namespace Property_Rental_Managment_WebSite.Models
 {
     using System;
     using System.Collections.Generic;

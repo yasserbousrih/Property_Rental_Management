@@ -1,0 +1,39 @@
+﻿@model List<Property_Rental_Managment_WebSite.Models.Appointment>
+
+@{
+    ViewBag.Title = "Show Requested Appointments";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Confirmed Appointments</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Appointment ID</th>
+            <th>Sender ID</th>
+            <th>Recipient ID</th>
+            <th>Time and Date</th>
+
+            <!-- Add other fields as necessary -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var appointment in Model)
+        {
+            <tr>
+                <td>@appointment.AppointmentID</td>
+                <td>@appointment.SenderID</td>
+                <td>@appointment.RecipientID</td>
+                <td>@(appointment.TimeAndDate?.ToString("g") ?? "N/A")</td>
+                <!-- Add other fields as necessary -->
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Add the buttons here -->
+<div>
+    <a href="@Url.Action("ShowRequestedAppointment", "Appointments")" class="btn btn-primary">Show Requested Appointments</a>
+    <a href="@Url.Action("ScheduleAppointment", "Appointments")" class="btn btn-primary">Schedule Appointment</a>
+</div>

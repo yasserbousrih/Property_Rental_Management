@@ -6,15 +6,16 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Property_Rental_Management.Data;
-using Property_Rental_Management.Models;
+
+using Property_Rental_Managment_WebSite.Models;
 
 
-namespace Property_Rental_Management.Controllers
+namespace Property_Rental_Managment_WebSite.Controllers
 {
     public class UsersController : Controller
     {
-        private Property_Rental_ManagementContext db = new Property_Rental_ManagementContext();
+        private PropertyRentalManagementWebSiteEntities db = new PropertyRentalManagementWebSiteEntities();
+
 
 
 
@@ -39,12 +40,17 @@ namespace Property_Rental_Management.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(User user)
         {
-            var userInDb = db.Users.FirstOrDefault(u => u.Email == user.Email && u.Password == user.Password);
-            if (userInDb != null)
+            var matchingUsers = db.Users.Where(u => u.Email == user.Email && u.Password == user.Password).ToList();
+            if (matchingUsers.Count > 1)
+            {
+                // Handle the error: multiple users with the same email and password found
+                ModelState.AddModelError("", "Multiple users with the same credentials found. Please contact support.");
+            }
+            else if (matchingUsers.Count == 1)
             {
                 // User found in the database
                 // You can set the user in the session here
-                Session["User"] = userInDb;
+                Session["User"] = matchingUsers.First();
                 return RedirectToAction("Index", "Home");
             }
             else
@@ -54,6 +60,7 @@ namespace Property_Rental_Management.Controllers
             }
             return View();
         }
+
 
 
         // GET: Users/Signup
@@ -69,15 +76,23 @@ namespace Property_Rental_Management.Controllers
         {
             if (ModelState.IsValid)
             {
+                // Check if a user with the same email already exists
+                var existingUser = db.Users.FirstOrDefault(u => u.Email == user.Email);
+                if (existingUser != null)
+                {
+                    // If a user with the same email already exists, add a model error
+                    ModelState.AddModelError("Email", "A user with this email already exists.");
+                    return View(user);
+                }
+
                 user.UserType = "p"; // Set UserType to 'p'
                 db.Users.Add(user);
                 db.SaveChanges();
                 Session["User"] = user;
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
             return View(user);
         }
-
 
 
 

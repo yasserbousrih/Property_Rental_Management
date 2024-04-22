@@ -1,4 +1,4 @@
-﻿@model Property_Rental_Management.Models.Property
+﻿@model Property_Rental_Managment_WebSite.Models.Property
 
 @{
     ViewBag.Title = "Delete";
@@ -13,14 +13,6 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.ManagerID)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ManagerID)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.Address)
         </dt>
 
@@ -34,6 +26,14 @@
 
         <dd>
             @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.Name)
         </dd>
 
     </dl>

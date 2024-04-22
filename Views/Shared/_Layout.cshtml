@@ -32,6 +32,9 @@
                             @Html.ActionLink("Messages", "ShowMessages", "Messages", new { area = "" }, new { @class = "nav-link" })
 
                         </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Appointments", "ShowConfirmedAppointment", "Appointments", new { area = "" }, new { @class = "nav-link" })
+                        </li>
 
                     }
 
@@ -39,14 +42,14 @@
 
                     @if (Session["User"] != null)
                     {
-                        var user = (Property_Rental_Management.Models.User)Session["User"];
+                        var user = (Property_Rental_Managment_WebSite.Models.User)Session["User"];
                         if (user.UserType == "a")
                         {
                             <li class="nav-item">
                                 @Html.ActionLink("Apartments", "Index", "Apartments", new { area = "" }, new { @class = "nav-link" })
                             </li>
                             <li class="nav-item">
-                                @Html.ActionLink("Messages", "Index", "Messages", new { area = "" }, new { @class = "nav-link" })
+                                @Html.ActionLink("Manage Messages", "Index", "Messages", new { area = "" }, new { @class = "nav-link" })
                             </li>
                             <li class="nav-item">
                                 @Html.ActionLink("Appointments", "Index", "Appointments", new { area = "" }, new { @class = "nav-link" })

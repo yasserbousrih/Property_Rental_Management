@@ -14,10 +14,11 @@
     <Key>
       <PropertyRef Name="AppointmentID" />
     </Key>
-    <Property Name="AppointmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="DateAndTime" Type="datetime" Nullable="false" />
-    <Property Name="Description" Type="nvarchar(max)" />
-    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="AppointmentID" Type="int" Nullable="false" />
+    <Property Name="SenderID" Type="int" />
+    <Property Name="RecipientID" Type="int" />
+    <Property Name="TimeAndDate" Type="datetime" />
+    <Property Name="Confirmed" Type="bit" />
   </EntityType>
   <EntityType Name="Messages">
     <Key>
@@ -37,16 +38,6 @@
     <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="ManagerID" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
-  </EntityType>
   <EntityType Name="Users">
     <Key>
       <PropertyRef Name="UserID" />
@@ -57,6 +48,30 @@
     <Property Name="Password" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="UserType" Type="char" MaxLength="1" Nullable="false" />
   </EntityType>
+  <Association Name="FK__Appointme__Recip__5DCAEF64">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Appointments" Type="Self.Appointments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Appointments">
+        <PropertyRef Name="RecipientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Appointme__Sende__5CD6CB2B">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Appointments" Type="Self.Appointments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Appointments">
+        <PropertyRef Name="SenderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Apartment_Property">
     <End Role="Properties" Type="Self.Properties" Multiplicity="0..1" />
     <End Role="Apartments" Type="Self.Apartments" Multiplicity="*" />
@@ -66,18 +81,6 @@
       </Principal>
       <Dependent Role="Apartments">
         <PropertyRef Name="PropertyID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Appointments_Users">
-    <End Role="Users" Type="Self.Users" Multiplicity="1" />
-    <End Role="Appointments" Type="Self.Appointments" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Users">
-        <PropertyRef Name="UserID" />
-      </Principal>
-      <Dependent Role="Appointments">
-        <PropertyRef Name="UserID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -122,15 +125,18 @@
     <EntitySet Name="Appointments" EntityType="Self.Appointments" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Messages" EntityType="Self.Messages" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Properties" EntityType="Self.Properties" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Appointme__Recip__5DCAEF64" Association="Self.FK__Appointme__Recip__5DCAEF64">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Appointments" EntitySet="Appointments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Appointme__Sende__5CD6CB2B" Association="Self.FK__Appointme__Sende__5CD6CB2B">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Appointments" EntitySet="Appointments" />
+    </AssociationSet>
     <AssociationSet Name="FK_Apartment_Property" Association="Self.FK_Apartment_Property">
       <End Role="Properties" EntitySet="Properties" />
       <End Role="Apartments" EntitySet="Apartments" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Appointments_Users" Association="Self.FK_Appointments_Users">
-      <End Role="Users" EntitySet="Users" />
-      <End Role="Appointments" EntitySet="Appointments" />
     </AssociationSet>
     <AssociationSet Name="FK_Messages_Users_Recipient" Association="Self.FK_Messages_Users_Recipient">
       <End Role="Users" EntitySet="Users" />
