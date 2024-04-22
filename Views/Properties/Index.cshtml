@@ -17,14 +17,12 @@
         }
     }
 </p>
-<p>
-    @using (Html.BeginForm("Index", "Properties", FormMethod.Get))
-    {
-        <input type="text" name="address" placeholder="Search by address" />
-        <input type="submit" value="Search" />
-    }
-</p>
-
+@using (Html.BeginForm("Index", "Properties", FormMethod.Get))
+{
+    <p>
+        Address: @Html.TextBox("address") <input type="submit" value="Search" />
+    </p>
+}
 
 
 <table class="table">

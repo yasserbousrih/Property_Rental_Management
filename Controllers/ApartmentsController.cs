@@ -18,24 +18,52 @@ namespace Property_Rental_Managment_WebSite.Controllers
         private PropertyRentalManagementWebSiteEntities db = new PropertyRentalManagementWebSiteEntities();
 
         // GET: Apartments
-        public async Task<ActionResult> Index(int? propertyId, string searchString)
+        //public async Task<ActionResult> Index(int? propertyId, string searchString)
+        //{
+        //    var apartments = db.Apartments.AsQueryable();
+
+        //    if (propertyId.HasValue)
+        //    {
+        //        apartments = apartments.Where(a => a.PropertyID == propertyId);
+        //    }
+
+        //    if (!String.IsNullOrEmpty(searchString))
+        //    {
+        //        apartments = apartments.Where(a => a.NumberOfRooms.ToString().Contains(searchString)
+        //                                           || a.Rent.ToString().Contains(searchString)
+        //                                           || a.Status.Contains(searchString));
+        //    }
+
+        //    return View(await apartments.ToListAsync());
+        //}
+        public async Task<ActionResult> Index(int? propertyId, int? numberOfRooms, decimal? rent, string status)
         {
             var apartments = db.Apartments.AsQueryable();
 
             if (propertyId.HasValue)
             {
-                apartments = apartments.Where(a => a.PropertyID == propertyId);
+                apartments = apartments.Where(a => a.PropertyID == propertyId.Value);
             }
 
-            if (!String.IsNullOrEmpty(searchString))
+            if (numberOfRooms.HasValue)
             {
-                apartments = apartments.Where(a => a.NumberOfRooms.ToString().Contains(searchString)
-                                                   || a.Rent.ToString().Contains(searchString)
-                                                   || a.Status.Contains(searchString));
+                apartments = apartments.Where(a => a.NumberOfRooms == numberOfRooms.Value);
+            }
+
+            if (rent.HasValue)
+            {
+                apartments = apartments.Where(a => a.Rent <= rent.Value);
+            }
+
+            if (!String.IsNullOrEmpty(status))
+            {
+                apartments = apartments.Where(a => a.Status.Contains(status));
             }
 
             return View(await apartments.ToListAsync());
         }
+
+
 
 
 

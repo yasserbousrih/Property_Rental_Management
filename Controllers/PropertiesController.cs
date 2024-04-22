@@ -21,15 +21,17 @@ namespace PropertyRentalManagementWebSite.Controllers
         // GET: Properties
         public ActionResult Index(string address)
         {
-            var properties = db.Properties.AsQueryable();
+            var properties = from p in db.Properties
+                             select p;
 
-            if (!string.IsNullOrEmpty(address))
+            if (!String.IsNullOrEmpty(address))
             {
                 properties = properties.Where(p => p.Address.Contains(address));
             }
 
             return View(properties.ToList());
         }
+
 
 
 
