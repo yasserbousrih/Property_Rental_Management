@@ -11,9 +11,13 @@ namespace PropertyRentalManagementWebSite.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class Message
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int MessageID { get; set; }
         public string Content { get; set; }
         public int SenderID { get; set; }

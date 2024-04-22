@@ -103,6 +103,7 @@ namespace Property_Rental_Managment_WebSite.Controllers
 
 
 
+
         // GET: Users
         public ActionResult Index()
         {
@@ -139,6 +140,15 @@ namespace Property_Rental_Managment_WebSite.Controllers
         {
             if (ModelState.IsValid)
             {
+                // Check if a user with the same email already exists
+                var existingUser = db.Users.FirstOrDefault(u => u.Email == user.Email);
+                if (existingUser != null)
+                {
+                    // If a user with the same email already exists, add a model error
+                    ModelState.AddModelError("Email", "A user with this email already exists.");
+                    return View(user);
+                }
+
                 db.Users.Add(user);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -146,6 +156,7 @@ namespace Property_Rental_Managment_WebSite.Controllers
 
             return View(user);
         }
+
 
         // GET: Users/Edit/5
         public ActionResult Edit(int? id)

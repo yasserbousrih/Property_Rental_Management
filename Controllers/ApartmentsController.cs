@@ -76,8 +76,12 @@ namespace Property_Rental_Managment_WebSite.Controllers
         // GET: Apartments/Create
         public ActionResult Create()
         {
+            ViewBag.Properties = new SelectList(db.Properties, "PropertyID", "Address");
             return View();
         }
+
+
+
 
         // POST: Apartments/Create
         [HttpPost]
@@ -90,6 +94,7 @@ namespace Property_Rental_Managment_WebSite.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.Properties = new SelectList(db.Properties, "PropertyID", "Address");
 
             return View(apartment);
         }

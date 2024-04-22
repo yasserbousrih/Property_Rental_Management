@@ -11,12 +11,19 @@ namespace PropertyRentalManagementWebSite.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class Apartment
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ApartmentID { get; set; }
+
         public int NumberOfRooms { get; set; }
         public decimal Rent { get; set; }
+
+        [RegularExpression(@"^(Free|Booked)$", ErrorMessage = "Status must be 'Free' or 'Booked'.")]
         public string Status { get; set; }
         public int PropertyID { get; set; }
     

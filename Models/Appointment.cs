@@ -11,9 +11,13 @@ namespace PropertyRentalManagementWebSite.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class Appointment
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int AppointmentID { get; set; }
         public int SenderID { get; set; }
         public int RecipientID { get; set; }

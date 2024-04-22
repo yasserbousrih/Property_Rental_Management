@@ -13,6 +13,7 @@ namespace PropertyRentalManagementWebSite.Models
     using System.Collections.Generic;
 
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
 
     public partial class User
@@ -26,7 +27,8 @@ namespace PropertyRentalManagementWebSite.Models
             this.Messages1 = new HashSet<Message>();
             this.Properties = new HashSet<Property>();
         }
-    
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int UserID { get; set; }
         public string Name { get; set; }
 
