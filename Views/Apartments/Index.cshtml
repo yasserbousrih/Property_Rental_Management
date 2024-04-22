@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<PropertyRentalManagementWebSite.Models.Apartment>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Apartments";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Apartments</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -22,7 +22,7 @@
             @Html.DisplayNameFor(model => model.Status)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Property.Name)
+            @Html.DisplayNameFor(model => model.Property.Address)
         </th>
         <th></th>
     </tr>
@@ -40,7 +40,7 @@
                 @Html.DisplayFor(modelItem => item.Status)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Property.Name)
+                @Html.DisplayFor(modelItem => item.Property.Address)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.ApartmentID }) |

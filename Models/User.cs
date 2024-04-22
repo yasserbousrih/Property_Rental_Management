@@ -11,7 +11,10 @@ namespace PropertyRentalManagementWebSite.Models
 {
     using System;
     using System.Collections.Generic;
-    
+
+    using System.ComponentModel.DataAnnotations;
+
+
     public partial class User
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -26,8 +29,12 @@ namespace PropertyRentalManagementWebSite.Models
     
         public int UserID { get; set; }
         public string Name { get; set; }
+
+        [RegularExpression(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$", ErrorMessage = "Invalid email format.")]
         public string Email { get; set; }
+        [RegularExpression(@"^.{6,}$", ErrorMessage = "Password must be at least 6 characters long.")]
         public string Password { get; set; }
+
         public string UserType { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

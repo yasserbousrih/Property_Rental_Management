@@ -17,12 +17,6 @@ namespace Property_Rental_Managment_WebSite.Controllers
     {
         private PropertyRentalManagementWebSiteEntities db = new PropertyRentalManagementWebSiteEntities();
 
-        // GET: Apartments
-        public async Task<ActionResult> Index()
-        {
-            var apartments = db.Apartments.Include(a => a.Property);
-            return View(await apartments.ToListAsync());
-        }
         public async Task<ActionResult> ShowApartments(int? propertyId, int? numberOfRooms, decimal? rent, string status)
         {
             var apartments = db.Apartments.AsQueryable();
@@ -54,36 +48,24 @@ namespace Property_Rental_Managment_WebSite.Controllers
 
 
 
-        //// GET: Apartments/By the propety ID
-        //public async Task<ActionResult> ListApartments(int? propertyId)
-        //{
-        //    if (propertyId == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
 
-        //    var apartments = await db.Apartments
-        //                        .Where(a => a.PropertyID == propertyId)
-        //                        .Include(a => a.Property)
-        //                        .ToListAsync();
 
-        //    if (apartments == null || apartments.Count == 0)
-        //    {
-        //        return HttpNotFound();
-        //    }
 
-        //    return View("Index", apartments);
-        //}
-
+        // GET: Apartments
+        public ActionResult Index()
+        {
+            var apartments = db.Apartments.ToList();
+            return View(apartments);
+        }
 
         // GET: Apartments/Details/5
-        public async Task<ActionResult> Details(int? id)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Apartment apartment = await db.Apartments.FindAsync(id);
+            Apartment apartment = db.Apartments.Find(id);
             if (apartment == null)
             {
                 return HttpNotFound();
@@ -94,70 +76,61 @@ namespace Property_Rental_Managment_WebSite.Controllers
         // GET: Apartments/Create
         public ActionResult Create()
         {
-            // Use ViewBag to pass the list of Properties to the view
-            ViewBag.PropertyID = new SelectList(db.Properties, "PropertyID", "Name");
             return View();
         }
 
         // POST: Apartments/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "ApartmentID,NumberOfRooms,Rent,Status,PropertyID")] Apartment apartment)
+        public ActionResult Create([Bind(Include = "ApartmentID,NumberOfRooms,Rent,Status,PropertyID")] Apartment apartment)
         {
             if (ModelState.IsValid)
             {
                 db.Apartments.Add(apartment);
-                await db.SaveChangesAsync();
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            // If the model state is not valid, repopulate the PropertyID dropdown list
-            ViewBag.PropertyID = new SelectList(db.Properties, "PropertyID", "Name", apartment.PropertyID);
             return View(apartment);
         }
 
-
         // GET: Apartments/Edit/5
-        public async Task<ActionResult> Edit(int? id)
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Apartment apartment = await db.Apartments.FindAsync(id);
+            Apartment apartment = db.Apartments.Find(id);
             if (apartment == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.PropertyID = new SelectList(db.Properties, "PropertyID", "Address", apartment.PropertyID);
             return View(apartment);
         }
 
         // POST: Apartments/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "ApartmentID,NumberOfRooms,Rent,Status,PropertyID")] Apartment apartment)
+        public ActionResult Edit([Bind(Include = "ApartmentID,NumberOfRooms,Rent,Status,PropertyID")] Apartment apartment)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(apartment).State = EntityState.Modified;
-                await db.SaveChangesAsync();
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.PropertyID = new SelectList(db.Properties, "PropertyID", "Address", apartment.PropertyID);
             return View(apartment);
         }
 
         // GET: Apartments/Delete/5
-        public async Task<ActionResult> Delete(int? id)
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Apartment apartment = await db.Apartments.FindAsync(id);
+            Apartment apartment = db.Apartments.Find(id);
             if (apartment == null)
             {
                 return HttpNotFound();
@@ -168,11 +141,11 @@ namespace Property_Rental_Managment_WebSite.Controllers
         // POST: Apartments/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(int id)
         {
-            Apartment apartment = await db.Apartments.FindAsync(id);
+            Apartment apartment = db.Apartments.Find(id);
             db.Apartments.Remove(apartment);
-            await db.SaveChangesAsync();
+            db.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -186,3 +159,4 @@ namespace Property_Rental_Managment_WebSite.Controllers
         }
     }
 }
+
