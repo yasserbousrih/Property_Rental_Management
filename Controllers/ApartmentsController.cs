@@ -17,6 +17,13 @@ namespace Property_Rental_Managment_WebSite.Controllers
     {
         private PropertyRentalManagementWebSiteEntities db = new PropertyRentalManagementWebSiteEntities();
 
+        public int GenerateNewApartmentID()
+        {
+            int maxApartmentID = db.Apartments.Max(a => a.ApartmentID);
+            return maxApartmentID + 1;
+        }
+
+
         public async Task<ActionResult> ShowApartments(int? propertyId, int? numberOfRooms, decimal? rent, string status)
         {
             var apartments = db.Apartments.AsQueryable();
@@ -86,10 +93,11 @@ namespace Property_Rental_Managment_WebSite.Controllers
         // POST: Apartments/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ApartmentID,NumberOfRooms,Rent,Status,PropertyID")] Apartment apartment)
+        public ActionResult Create([Bind(Include = "NumberOfRooms,Rent,Status,PropertyID")] Apartment apartment)
         {
             if (ModelState.IsValid)
             {
+                apartment.ApartmentID = GenerateNewApartmentID();
                 db.Apartments.Add(apartment);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -98,6 +106,8 @@ namespace Property_Rental_Managment_WebSite.Controllers
 
             return View(apartment);
         }
+
+
 
         // GET: Apartments/Edit/5
         public ActionResult Edit(int? id)
